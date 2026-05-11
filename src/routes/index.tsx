@@ -261,9 +261,8 @@ function Index() {
                 <span className="italic text-bronze/90">conversar.</span>
               </h2>
               <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                Cada projecto começa por uma conversa. Apresente o contexto da
-                sua organização e os objectivos em vista — a resposta é
-                pessoal e habitualmente em 48 horas.
+                Cada projecto começa por uma conversa. A conversa começa com
+                contexto, não com fórmulas pré-definidas.
               </p>
 
               <div className="mt-14 space-y-8">
