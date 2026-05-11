@@ -261,8 +261,9 @@ function Index() {
                 <span className="italic text-bronze/90">conversar.</span>
               </h2>
               <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                Se procura uma abordagem prática, humana e ajustada à realidade
-                da sua equipa, a conversa começa aqui.
+                Cada projecto começa por uma conversa. Apresente o contexto da
+                sua organização e os objectivos em vista — a resposta é
+                pessoal e habitualmente em 48 horas.
               </p>
 
               <div className="mt-14 space-y-8">
