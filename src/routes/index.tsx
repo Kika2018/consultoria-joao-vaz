@@ -289,25 +289,38 @@ function Index() {
             </div>
 
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(e) => {
+                e.preventDefault();
+                const data = new FormData(e.currentTarget);
+                const nome = String(data.get("nome") ?? "");
+                const email = String(data.get("email") ?? "");
+                const empresa = String(data.get("empresa") ?? "");
+                const mensagem = String(data.get("mensagem") ?? "");
+                const subject = "Pedido de contacto — João Vaz";
+                const body = `Nome: ${nome}\nE-mail: ${email}\nEmpresa: ${empresa}\nMensagem: ${mensagem}`;
+                window.location.href = `mailto:geral@joaovaz.co?subject=${encodeURIComponent(
+                  subject,
+                )}&body=${encodeURIComponent(body)}`;
+              }}
               className="space-y-8 md:col-span-6 md:col-start-7"
             >
-              <Field label="NOME" placeholder="O seu nome" />
-              <Field label="E-MAIL" type="email" placeholder="o.seu@email.pt" />
-              <Field label="EMPRESA" placeholder="Nome da organização" />
+              <Field name="nome" label="NOME" placeholder="O seu nome" />
+              <Field name="email" label="E-MAIL" type="email" placeholder="o.seu@email.pt" />
+              <Field name="empresa" label="EMPRESA" placeholder="Nome da organização" />
               <FieldArea
+                name="mensagem"
                 label="MENSAGEM"
                 placeholder="Descreva brevemente o que procura…"
               />
-              <a
-                href="#contacto"
+              <button
+                type="submit"
                 className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
               >
                 VAMOS CONVERSAR
                 <span className="transition-transform group-hover:translate-x-1">
                   →
                 </span>
-              </a>
+              </button>
             </form>
           </div>
         </div>
@@ -331,10 +344,12 @@ function Field({
   label,
   placeholder,
   type = "text",
+  name,
 }: {
   label: string;
   placeholder: string;
   type?: string;
+  name?: string;
 }) {
   return (
     <label className="block">
@@ -343,6 +358,7 @@ function Field({
       </span>
       <input
         type={type}
+        name={name}
         placeholder={placeholder}
         className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
@@ -353,9 +369,11 @@ function Field({
 function FieldArea({
   label,
   placeholder,
+  name,
 }: {
   label: string;
   placeholder: string;
+  name?: string;
 }) {
   return (
     <label className="block">
@@ -364,6 +382,7 @@ function FieldArea({
       </span>
       <textarea
         rows={4}
+        name={name}
         placeholder={placeholder}
         className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
