@@ -161,9 +161,9 @@ function Index() {
               decide e com quem executa.
             </p>
             <p>
-              Hoje, acompanha empresas que procuram desenvolver os seus
-              quadros comerciais e de liderança com seriedade, discrição e
-              resultados verificáveis no terreno.
+              Hoje, acompanha organizações que valorizam liderança,
+              desenvolvimento comercial e aprendizagem aplicada à realidade
+              das equipas.
             </p>
           </div>
         </div>
