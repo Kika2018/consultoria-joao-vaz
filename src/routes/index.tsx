@@ -41,22 +41,22 @@ const areas = [
   {
     n: "01",
     title: "Formação Comercial",
-    body: "Desenvolvimento de equipas comerciais com foco em comunicação, relação, confiança e criação de valor no processo de venda.",
+    body: "Programas dirigidos a equipas de vendas e gestão comercial, com enfoque na relação com o cliente, na argumentação e na criação consistente de valor ao longo do ciclo comercial.",
   },
   {
     n: "02",
     title: "Comunicação & Liderança",
-    body: "Comunicação clara, presença, tomada de decisão e capacidade de criar alinhamento dentro das equipas.",
+    body: "Trabalho com líderes e quadros intermédios sobre clareza de discurso, presença, decisão e a capacidade de alinhar equipas em contextos de mudança.",
   },
   {
     n: "03",
     title: "Customer Centricity",
-    body: "Ferramentas práticas para compreender melhor clientes, equipas e contexto, criando experiências mais relevantes e relações mais fortes.",
+    body: "Métodos práticos para compreender o cliente, qualificar contexto e desenhar experiências coerentes — do primeiro contacto à relação de longo prazo.",
   },
   {
     n: "04",
     title: "Comunicação com Impacto",
-    body: "Comunicação verbal e não-verbal aplicada a apresentações, liderança, negociação e contexto comercial.",
+    body: "Comunicação verbal e não-verbal aplicada a apresentações executivas, negociação e contextos de elevada exposição.",
   },
 ];
 
@@ -64,17 +64,17 @@ const principles = [
   {
     n: "01",
     title: "Contexto antes de conteúdo",
-    body: "Qualquer programa começa por um diagnóstico real. O que funciona numa organização pode não funcionar noutra. O ponto de partida é sempre a realidade concreta da equipa.",
+    body: "Cada intervenção começa por um diagnóstico próximo da realidade da organização. O programa é construído a partir do que existe, não a partir de um modelo pré-definido.",
   },
   {
     n: "02",
     title: "Aprendizagem pela prática",
-    body: "A teoria serve de suporte, nunca de fim. As sessões são desenhadas para gerar mudança de comportamento — não apenas transmissão de conhecimento.",
+    body: "As sessões privilegiam a aplicação ao trabalho real. A teoria é instrumento de suporte; o objectivo é a mudança consistente de comportamento.",
   },
   {
     n: "03",
-    title: "Impacto mensurável",
-    body: "O sucesso de uma formação mede-se no terreno. Os programas incluem acompanhamento pós-formação e ferramentas de aplicação prática no contexto real.",
+    title: "Continuidade no terreno",
+    body: "O valor de uma formação confirma-se nas semanas seguintes. Cada programa prevê acompanhamento e instrumentos de aplicação no quotidiano das equipas.",
   },
 ];
 
@@ -146,26 +146,24 @@ function Index() {
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:col-start-6 md:text-lg">
             <p>
-              João Vaz construiu o seu percurso profissional entre o sector
-              comercial, a saúde e o empreendedorismo, trabalhando ao longo de
-              mais de duas décadas com equipas multidisciplinares em contextos
-              de elevada exigência e forte orientação para resultados.
+              Mais de duas décadas de actividade entre o sector comercial, a
+              indústria da saúde e o empreendedorismo, em organizações
+              nacionais e internacionais com forte exigência de resultados.
             </p>
             <p>
-              A sua experiência combina desenvolvimento de negócio, negociação,
-              trabalho próximo com equipas comerciais e brand teams, bem como
-              participação em projectos estratégicos ligados à experiência do
-              cliente e ao crescimento organizacional.
+              O percurso integra responsabilidades em desenvolvimento de
+              negócio, gestão de equipas comerciais, negociação e colaboração
+              próxima com áreas de marketing, marca e estratégia de cliente.
             </p>
             <p>
-              A sua abordagem assenta na experiência real — na capacidade de
-              comunicar, adaptar, criar confiança e gerar impacto concreto nas
-              pessoas, nas equipas e nas organizações.
+              Da experiência fica um método: ouvir antes de propor, adaptar
+              cada intervenção ao contexto e trabalhar lado a lado com quem
+              decide e com quem executa.
             </p>
             <p>
-              Hoje, trabalha com empresas que valorizam comunicação humana,
-              desenvolvimento comercial e soluções ajustadas à realidade das
-              suas equipas.
+              Hoje, acompanha empresas que procuram desenvolver os seus
+              quadros comerciais e de liderança com seriedade, discrição e
+              resultados verificáveis no terreno.
             </p>
           </div>
         </div>
@@ -226,10 +224,10 @@ function Index() {
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-                A formação que não muda comportamentos raramente deixa marca. A
-                que muda cria impacto real. Este é o princípio que orienta cada
-                projecto — independentemente da dimensão, sector ou contexto da
-                organização.
+                A formação que não altera comportamentos dificilmente justifica
+                o tempo investido. Cada intervenção é desenhada para produzir
+                efeito duradouro — proporcional à dimensão, ao sector e à
+                cultura da organização.
               </p>
             </div>
           </div>
@@ -263,8 +261,9 @@ function Index() {
                 <span className="italic text-bronze/90">conversar.</span>
               </h2>
               <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                Se procura uma abordagem prática, humana e ajustada à realidade
-                da sua equipa, a conversa começa aqui.
+                Cada projecto começa por uma conversa. Apresente o contexto da
+                sua organização e os objectivos em vista — a resposta é
+                pessoal e habitualmente em 48 horas.
               </p>
 
               <div className="mt-14 space-y-8">
