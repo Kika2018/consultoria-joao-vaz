@@ -50,7 +50,7 @@ const areas = [
   },
   {
     n: "03",
-    title: "Customer Centricity",
+    title: "Relação com o Cliente",
     body: "Métodos práticos para compreender o cliente, qualificar contexto e desenhar experiências coerentes — do primeiro contacto à relação de longo prazo.",
   },
   {
