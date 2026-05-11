@@ -224,10 +224,10 @@ function Index() {
             </div>
             <div className="md:col-span-6 md:col-start-7">
               <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-                A formação que não muda comportamentos raramente deixa marca. A
-                que muda cria impacto real. Este é o princípio que orienta cada
-                projecto — independentemente da dimensão, sector ou contexto da
-                organização.
+                A formação que não altera comportamentos dificilmente justifica
+                o tempo investido. Cada intervenção é desenhada para produzir
+                efeito duradouro — proporcional à dimensão, ao sector e à
+                cultura da organização.
               </p>
             </div>
           </div>
