@@ -74,7 +74,7 @@ const principles = [
   {
     n: "03",
     title: "Continuidade no terreno",
-    body: "O valor de uma formação confirma-se nas semanas seguintes. Cada programa prevê acompanhamento e instrumentos de aplicação no quotidiano das equipas.",
+    body: "O valor de uma formação confirma-se nas semanas seguintes. Cada programa prevê acompanhamento e ferramentas práticas para aplicação no quotidiano das equipas.",
   },
 ];
 
