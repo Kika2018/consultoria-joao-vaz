@@ -344,10 +344,12 @@ function Field({
   label,
   placeholder,
   type = "text",
+  name,
 }: {
   label: string;
   placeholder: string;
   type?: string;
+  name?: string;
 }) {
   return (
     <label className="block">
@@ -356,6 +358,7 @@ function Field({
       </span>
       <input
         type={type}
+        name={name}
         placeholder={placeholder}
         className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
@@ -366,9 +369,11 @@ function Field({
 function FieldArea({
   label,
   placeholder,
+  name,
 }: {
   label: string;
   placeholder: string;
+  name?: string;
 }) {
   return (
     <label className="block">
@@ -377,6 +382,7 @@ function FieldArea({
       </span>
       <textarea
         rows={4}
+        name={name}
         placeholder={placeholder}
         className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
