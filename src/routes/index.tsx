@@ -299,15 +299,15 @@ function Index() {
                 label="MENSAGEM"
                 placeholder="Descreva brevemente o que procura…"
               />
-              <button
-                type="submit"
+              <a
+                href="#contacto"
                 className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
               >
                 VAMOS CONVERSAR
                 <span className="transition-transform group-hover:translate-x-1">
                   →
                 </span>
-              </button>
+              </a>
             </form>
           </div>
         </div>
