@@ -146,26 +146,24 @@ function Index() {
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:col-start-6 md:text-lg">
             <p>
-              João Vaz construiu o seu percurso profissional entre o sector
-              comercial, a saúde e o empreendedorismo, trabalhando ao longo de
-              mais de duas décadas com equipas multidisciplinares em contextos
-              de elevada exigência e forte orientação para resultados.
+              Mais de duas décadas de actividade entre o sector comercial, a
+              indústria da saúde e o empreendedorismo, em organizações
+              nacionais e internacionais com forte exigência de resultados.
             </p>
             <p>
-              A sua experiência combina desenvolvimento de negócio, negociação,
-              trabalho próximo com equipas comerciais e brand teams, bem como
-              participação em projectos estratégicos ligados à experiência do
-              cliente e ao crescimento organizacional.
+              O percurso integra responsabilidades em desenvolvimento de
+              negócio, gestão de equipas comerciais, negociação e colaboração
+              próxima com áreas de marketing, marca e estratégia de cliente.
             </p>
             <p>
-              A sua abordagem assenta na experiência real — na capacidade de
-              comunicar, adaptar, criar confiança e gerar impacto concreto nas
-              pessoas, nas equipas e nas organizações.
+              Da experiência fica um método: ouvir antes de propor, adaptar
+              cada intervenção ao contexto e trabalhar lado a lado com quem
+              decide e com quem executa.
             </p>
             <p>
-              Hoje, trabalha com empresas que valorizam comunicação humana,
-              desenvolvimento comercial e soluções ajustadas à realidade das
-              suas equipas.
+              Hoje, acompanha empresas que procuram desenvolver os seus
+              quadros comerciais e de liderança com seriedade, discrição e
+              resultados verificáveis no terreno.
             </p>
           </div>
         </div>
