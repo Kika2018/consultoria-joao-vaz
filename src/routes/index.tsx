@@ -271,10 +271,10 @@ function Index() {
                     E-MAIL
                   </p>
                   <a
-                    href="mailto:geral@joaovaz.pt"
+                    href="mailto:geral@joaovaz.co"
                     className="mt-2 inline-block font-serif text-xl text-foreground transition-colors hover:text-bronze md:text-2xl"
                   >
-                    geral@joaovaz.pt
+                    geral@joaovaz.co
                   </a>
                 </div>
                 <div>
