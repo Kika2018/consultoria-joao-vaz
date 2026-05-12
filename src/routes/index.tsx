@@ -114,7 +114,7 @@ function Index() {
                 href="#contacto"
                 className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
               >
-                VAMOS CONVERSAR
+                AGENDAR REUNIÃO
                 <span className="transition-transform group-hover:translate-x-1">
                   →
                 </span>
@@ -295,32 +295,39 @@ function Index() {
                 const nome = String(data.get("nome") ?? "");
                 const email = String(data.get("email") ?? "");
                 const empresa = String(data.get("empresa") ?? "");
+                const telefone = String(data.get("telefone") ?? "");
                 const mensagem = String(data.get("mensagem") ?? "");
                 const subject = "Pedido de contacto — João Vaz";
-                const body = `Nome: ${nome}\nE-mail: ${email}\nEmpresa: ${empresa}\nMensagem: ${mensagem}`;
+                const body = `Nome: ${nome}\nE-mail: ${email}\nEmpresa: ${empresa}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
                 window.location.href = `mailto:geral@joaovaz.co?subject=${encodeURIComponent(
                   subject,
                 )}&body=${encodeURIComponent(body)}`;
               }}
               className="space-y-8 md:col-span-6 md:col-start-7"
             >
-              <Field name="nome" label="NOME" placeholder="O seu nome" />
-              <Field name="email" label="E-MAIL" type="email" placeholder="o.seu@email.pt" />
-              <Field name="empresa" label="EMPRESA" placeholder="Nome da organização" />
+              <Field name="nome" label="NOME" placeholder="O seu nome" required />
+              <Field name="email" label="E-MAIL" type="email" placeholder="o.seu@email.pt" required />
+              <Field name="empresa" label="EMPRESA" placeholder="Nome da organização" required />
+              <Field name="telefone" label="TELEFONE (OPCIONAL)" type="tel" placeholder="+351" />
               <FieldArea
                 name="mensagem"
-                label="MENSAGEM"
+                label="MENSAGEM (OPCIONAL)"
                 placeholder="Descreva brevemente o que procura…"
               />
-              <button
-                type="submit"
-                className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
-              >
-                VAMOS CONVERSAR
-                <span className="transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </button>
+              <div className="space-y-3">
+                <button
+                  type="submit"
+                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
+                >
+                  AGENDAR REUNIÃO
+                  <span className="transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </button>
+                <p className="text-[11px] tracking-editorial text-muted-foreground">
+                  RESPOSTA EM 24–48H ÚTEIS.
+                </p>
+              </div>
             </form>
           </div>
         </div>
@@ -345,11 +352,13 @@ function Field({
   placeholder,
   type = "text",
   name,
+  required = false,
 }: {
   label: string;
   placeholder: string;
   type?: string;
   name?: string;
+  required?: boolean;
 }) {
   return (
     <label className="block">
@@ -359,6 +368,7 @@ function Field({
       <input
         type={type}
         name={name}
+        required={required}
         placeholder={placeholder}
         className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
