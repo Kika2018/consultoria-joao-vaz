@@ -95,7 +95,7 @@ function Index() {
         />
         <div className="relative mx-auto w-full max-w-7xl">
           <div className="max-w-3xl">
-            <p className="whitespace-nowrap text-[13px] tracking-editorial text-bronze/95">
+            <p className="whitespace-nowrap text-[17px] tracking-editorial text-bronze md:text-[18px]">
               FORMAÇÃO CORPORATIVA &nbsp;·&nbsp; DESENVOLVIMENTO COMERCIAL
             </p>
             <h1 className="mt-10 font-serif text-7xl leading-[0.95] tracking-tight text-foreground md:text-[10rem]">
