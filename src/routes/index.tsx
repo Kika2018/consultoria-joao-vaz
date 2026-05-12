@@ -334,12 +334,9 @@ function Index() {
       </section>
 
       <footer className="border-t border-border px-6 py-10 md:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-          <p className="font-serif text-lg tracking-[0.18em] text-foreground">
-            João Vaz
-          </p>
-          <p className="text-[11px] tracking-editorial text-muted-foreground">
-            © 2025 — TODOS OS DIREITOS RESERVADOS
+        <div className="mx-auto max-w-7xl">
+          <p className="font-serif text-sm text-muted-foreground">
+            João Vaz · Todos os direitos reservados
           </p>
         </div>
       </footer>
