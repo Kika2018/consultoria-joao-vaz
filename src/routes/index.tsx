@@ -60,6 +60,14 @@ const areas = [
   },
 ];
 
+const credentials = [
+  { institution: "IPAM", title: "Licenciatura em Gestão de Marketing" },
+  { institution: "ISEG", title: "Pós-Graduação em Foresight, Strategy & Innovation" },
+  { institution: "Nova SBE", title: "Formação Executiva em Negociação Avançada" },
+  { institution: "IEFP", title: "Certificado de Competências Pedagógicas (CCP)" },
+  { institution: "Lisbon Digital School", title: "Strategic AI Executive Training" },
+];
+
 const principles = [
   {
     n: "01",
