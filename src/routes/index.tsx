@@ -60,6 +60,14 @@ const areas = [
   },
 ];
 
+const credentials = [
+  { institution: "IPAM", title: "Licenciatura em Gestão de Marketing" },
+  { institution: "ISEG", title: "Pós-Graduação em Foresight, Strategy & Innovation" },
+  { institution: "Nova SBE", title: "Formação Executiva em Negociação Avançada" },
+  { institution: "IEFP", title: "Certificado de Competências Pedagógicas (CCP)" },
+  { institution: "Lisbon Digital School", title: "Strategic AI Executive Training" },
+];
+
 const principles = [
   {
     n: "01",
@@ -245,6 +253,39 @@ function Index() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FORMAÇÃO & CERTIFICAÇÕES */}
+      <section id="formacao" className="px-6 py-32 md:px-12 md:py-40">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 md:grid-cols-12">
+            <div className="md:col-span-4">
+              <SectionLabel>FORMAÇÃO &amp; CERTIFICAÇÕES</SectionLabel>
+              <h2 className="mt-8 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+                Percurso
+                <br />
+                <span className="italic text-bronze/90">académico.</span>
+              </h2>
+            </div>
+            <div className="md:col-span-7 md:col-start-6">
+              <ul className="divide-y divide-border border-y border-border">
+                {credentials.map((c) => (
+                  <li
+                    key={c.title}
+                    className="grid gap-2 py-7 md:grid-cols-12 md:items-baseline md:gap-10 md:py-8"
+                  >
+                    <p className="text-[11px] tracking-editorial text-bronze md:col-span-4">
+                      {c.institution.toUpperCase()}
+                    </p>
+                    <p className="font-serif text-xl leading-snug text-foreground md:col-span-8 md:text-2xl">
+                      {c.title}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

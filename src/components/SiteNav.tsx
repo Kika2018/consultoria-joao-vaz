@@ -4,6 +4,7 @@ const links = [
   { href: "#sobre", label: "Sobre" },
   { href: "#areas", label: "Áreas" },
   { href: "#filosofia", label: "Filosofia" },
+  { href: "#formacao", label: "Formação" },
   { href: "#contacto", label: "Contacto" },
 ];
 
