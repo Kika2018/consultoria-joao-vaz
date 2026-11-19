@@ -37,3 +37,15 @@ jobs:
           PY
       - name: Compilar TanStack Start para Cloudflare
         run: bun run build
+      - name: Verificar páginas e assets em execução
+        run: |
+          bun run preview --host 127.0.0.1 --port 4173 >/tmp/joaovaz-preview.log 2>&1 &
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null 2>&1; then break; fi
+            sleep 1
+          done
+          for path in / /vendas-negociacao /comunicacao-lideranca /empreendedorismo /inteligencia-artificial /insights /insights/empreender-reduzir-incerteza /insights/ouvir-antes-de-propor /insights/ia-primeiros-passos /insights/formacao-da-teoria-a-pratica /sitemap.xml /robots.txt /joao-vaz-retrato.svg; do
+            status=$(curl -sS -o /tmp/site-page -w "%{http_code}" "http://127.0.0.1:4173$path") || status=000
+            echo "$status $path"
+            if [ "$status" != "200" ]; then cat /tmp/joaovaz-preview.log; exit 1; fi
+          done
