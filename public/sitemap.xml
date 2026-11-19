@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://joaovaz.co/</loc>
-  </url>
+  <url><loc>https://joaovaz.co/</loc></url>
+  <url><loc>https://joaovaz.co/vendas-negociacao</loc></url>
+  <url><loc>https://joaovaz.co/comunicacao-lideranca</loc></url>
+  <url><loc>https://joaovaz.co/empreendedorismo</loc></url>
+  <url><loc>https://joaovaz.co/inteligencia-artificial</loc></url>
+  <url><loc>https://joaovaz.co/insights</loc></url>
+  <url><loc>https://joaovaz.co/insights/empreender-reduzir-incerteza</loc></url>
+  <url><loc>https://joaovaz.co/insights/ouvir-antes-de-propor</loc></url>
+  <url><loc>https://joaovaz.co/insights/ia-primeiros-passos</loc></url>
+  <url><loc>https://joaovaz.co/insights/formacao-da-teoria-a-pratica</loc></url>
 </urlset>
