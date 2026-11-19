@@ -130,6 +130,30 @@ function Index() {
             </div>
           </div>
 
+          {/* Retrato integrado com a identidade visual da marca */}
+          <div className="mt-14 flex justify-center lg:hidden">
+            <img
+              src="/joao-vaz-retrato.svg"
+              alt="João Vaz — formador e consultor em desenvolvimento comercial"
+              width={420}
+              height={525}
+              className="w-full max-w-[290px] object-contain"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          <div className="pointer-events-none absolute bottom-0 right-0 hidden w-[38%] max-w-[490px] lg:block">
+            <img
+              src="/joao-vaz-retrato.svg"
+              alt="Retrato profissional de João Vaz"
+              width={420}
+              height={525}
+              className="h-auto w-full object-contain"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
           <div className="absolute bottom-0 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
             <span className="text-[10px] tracking-editorial text-muted-foreground">
               SCROLL
