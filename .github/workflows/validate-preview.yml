@@ -1,0 +1,22 @@
+name: Validar versão de revisão
+on:
+  push:
+    branches:
+      - preview/retrato-joao-vaz
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+      - name: Compilar TanStack Start para Cloudflare
+        run: bun run build
