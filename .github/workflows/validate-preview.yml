@@ -1,0 +1,61 @@
+name: Validar versão de revisão
+on:
+  push:
+    branches:
+      - preview/retrato-joao-vaz
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+      - name: Validar integridade do retrato
+        run: |
+          python3 -m venv /tmp/jv-image-check
+          /tmp/jv-image-check/bin/pip install -q Pillow
+          /tmp/jv-image-check/bin/python - <<'PY'
+          import re, base64, io
+          from pathlib import Path
+          from PIL import Image
+          text = Path("public/joao-vaz-retrato.svg").read_text()
+          m = re.search(r'data:image/webp;base64,([^"]+)', text)
+          assert m, "Fotografia não encontrada no SVG"
+          data = base64.b64decode(m.group(1))
+          image = Image.open(io.BytesIO(data))
+          image.load()
+          assert image.size == (420,525), f"Dimensões incorretas: {image.size}"
+          print("Imagem validada:", image.size, image.format)
+          PY
+      - name: Compilar TanStack Start para Cloudflare
+        run: bun run build
+      - name: Validar mapa de páginas e indexação
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          paths = [
+            "/", "/vendas-negociacao", "/comunicacao-lideranca",
+            "/empreendedorismo", "/inteligencia-artificial", "/insights",
+            "/insights/empreender-reduzir-incerteza",
+            "/insights/ouvir-antes-de-propor", "/insights/ia-primeiros-passos",
+            "/insights/formacao-da-teoria-a-pratica"
+          ]
+          root = ET.parse("public/sitemap.xml").getroot()
+          urls = [e.text for e in root.findall("{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
+          for p in paths:
+            filename = "src/routes/index.tsx" if p == "/" else "src/routes" + p + ".tsx"
+            assert Path(filename).is_file(), filename
+            assert "https://joaovaz.co" + p in urls, p
+          assert len(urls) == len(paths)
+          assert Path("public/robots.txt").exists()
+          print(f"{len(paths)} rotas e sitemap validados")
+          PY
