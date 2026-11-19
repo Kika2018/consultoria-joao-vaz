@@ -18,5 +18,22 @@ jobs:
           bun-version: latest
       - name: Instalar dependências
         run: bun install --frozen-lockfile
+      - name: Validar integridade do retrato
+        run: |
+          python3 -m venv /tmp/jv-image-check
+          /tmp/jv-image-check/bin/pip install -q Pillow
+          /tmp/jv-image-check/bin/python - <<'PY'
+          import re, base64, io
+          from pathlib import Path
+          from PIL import Image
+          text = Path("public/joao-vaz-retrato.svg").read_text()
+          m = re.search(r'data:image/webp;base64,([^"]+)', text)
+          assert m, "Fotografia não encontrada no SVG"
+          data = base64.b64decode(m.group(1))
+          image = Image.open(io.BytesIO(data))
+          image.load()
+          assert image.size == (420,525), f"Dimensões incorretas: {image.size}"
+          print("Imagem validada:", image.size, image.format)
+          PY
       - name: Compilar TanStack Start para Cloudflare
         run: bun run build
