@@ -290,6 +290,40 @@ function Index() {
         </div>
       </section>
 
+      {/* EBOOK GRATUITO */}
+      <section id="ebook" className="bg-ink px-6 py-24 md:px-12 md:py-32">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <SectionLabel>EBOOK GRATUITO</SectionLabel>
+            <h2 className="mt-8 font-serif text-5xl leading-tight text-foreground md:text-7xl">
+              Da Ideia <span className="italic text-bronze/90">à Ação.</span>
+            </h2>
+            <p className="mt-7 max-w-xl font-serif text-2xl leading-relaxed text-foreground">
+              Pensar melhor, compreender pessoas e transformar conhecimento em resultados.
+            </p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Um guia com reflexões, experiências e exercícios práticos sobre decisões, empatia,
+              comunicação, pensamento empreendedor e inteligência artificial.
+            </p>
+            <a
+              className="mt-10 inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
+              href="/ebook"
+            >
+              CONHECER O EBOOK GRATUITO <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div className="md:col-span-5">
+            <a href="/ebook" aria-label="Conhecer o eBook Da Ideia à Ação" className="mx-auto flex aspect-[148/210] max-w-[270px] flex-col bg-[#0D1B2A] p-8 shadow-2xl ring-1 ring-[#A8874A]/40">
+              <span className="text-xs tracking-widest text-[#F5F0EB]">João Vaz</span>
+              <span className="mt-10 h-px w-16 bg-[#A8874A]"/>
+              <span className="flex flex-1 items-center font-serif text-5xl leading-tight text-[#F5F0EB]">Da Ideia<br/>à Ação</span>
+              <span className="text-xs leading-relaxed text-[#F5F0EB]">Pensar melhor, compreender pessoas e transformar conhecimento em resultados.</span>
+              <span className="mt-8 h-px w-12 bg-[#A8874A]"/>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACTO */}
       <section id="contacto" className="px-6 py-32 md:px-12 md:py-40">
         <div className="mx-auto max-w-7xl">
