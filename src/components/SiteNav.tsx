@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#areas", label: "Áreas" },
-  { href: "#filosofia", label: "Filosofia" },
-  { href: "#formacao", label: "Formação" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#areas", label: "Áreas" },
+  { href: "/#filosofia", label: "Filosofia" },
+  { href: "/#formacao", label: "Formação" },
+  { href: "/#contacto", label: "Contacto" },
+  { href: "/ebook", label: "eBook" },
 ];
 
 export function SiteNav() {
@@ -28,7 +29,7 @@ export function SiteNav() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12 md:py-8">
         <a
-          href="#top"
+          href="/#top"
           className="font-serif text-lg tracking-[0.18em] text-foreground"
         >
           JOÃO VAZ
