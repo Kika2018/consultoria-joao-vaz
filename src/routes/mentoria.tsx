@@ -5,7 +5,7 @@ export const Route = createFileRoute("/mentoria")({
   head: () => ({
     meta: [
       { title: "Mentoria Empreendedora — Da Ideia à Ação | João Vaz" },
-      { name: "description", content: "Projeto-piloto de mentoria empreendedora para 5 a 10 jovens dos 20 aos 35 anos, com ou sem ideias de negócio e independentemente da formação académica." },
+      { name: "description", content: "Projeto-piloto de mentoria empreendedora para 5 a 10 participantes adultos, com ou sem ideias de negócio e independentemente da formação académica." },
       { property: "og:title", content: "Mentoria Empreendedora — João Vaz" },
       { property: "og:description", content: "Descobrir oportunidades. Estruturar ideias. Dar o primeiro passo." },
     ],
@@ -71,7 +71,7 @@ function MentoriaPage() {
           <div className="relative mx-auto max-w-7xl">
             <p className="text-[11px] uppercase tracking-[.23em] text-bronze">DA IDEIA À AÇÃO · MENTORIA EMPREENDEDORA</p>
             <h1 className="mt-7 max-w-5xl font-serif text-[clamp(3.1rem,7vw,6.5rem)] leading-[1.04] tracking-tight">Não precisas de ter uma ideia.<br/><em className="text-bronze">Precisas de começar.</em></h1>
-            <p className="mt-9 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">Tens entre 20 e 35 anos? Gostavas de criar algo teu, descobrir oportunidades ou desenvolver uma mentalidade empreendedora? O teu percurso académico não é uma barreira.</p>
+            <p className="mt-9 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">Gostavas de criar algo teu, descobrir oportunidades ou desenvolver uma mentalidade empreendedora? O teu percurso académico não é uma barreira.</p>
             <div className="mt-8 flex flex-wrap gap-3 text-xs tracking-wider text-bronze">
               <span className="border border-bronze/40 px-3 py-2">CANDIDATURAS ATÉ 10 JAN 2027</span>
               <span className="border border-bronze/40 px-3 py-2">5 A 10 PARTICIPANTES</span>
@@ -93,7 +93,7 @@ function MentoriaPage() {
         </section>
         <section className="px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:gap-16">
-            <div><p className="text-[11px] tracking-[.23em] text-bronze">COMO FUNCIONA A SELEÇÃO</p><h2 className="mt-5 font-serif text-4xl leading-tight md:text-5xl">Não é o currículo que decide.</h2></div>
+            <div><p className="text-[11px] tracking-[.23em] text-bronze">COMO FUNCIONA A SELEÇÃO</p><h2 className="mt-5 font-serif text-4xl leading-tight md:text-5xl">A vontade de avançar conta mais do que a idade.</h2></div>
             <div className="space-y-5 text-base leading-8 text-muted-foreground">
               <p>Todas as candidaturas serão analisadas individualmente por João Vaz. A seleção dos 5 a 10 participantes não é automática: valorizamos a motivação, a curiosidade e a disponibilidade para agir.</p>
               <p>As candidaturas encerram a 10 de janeiro de 2027. A análise está prevista para 11 a 17 de janeiro e a comunicação aos selecionados para 18 a 20 de janeiro.</p>
@@ -112,7 +112,7 @@ function MentoriaPage() {
                 <div><label htmlFor="c-nome" className={labelClass}>Nome completo *</label><input id="c-nome" required maxLength={120} autoComplete="name" className={fieldClass} value={dados.nome} onChange={e=>setCampo("nome",e.target.value)} /></div>
                 <div className="grid gap-5 md:grid-cols-2">
                   <div><label htmlFor="c-email" className={labelClass}>Email *</label><input type="email" id="c-email" required autoComplete="email" className={fieldClass} value={dados.email} onChange={e=>setCampo("email",e.target.value)}/></div>
-                  <div><label htmlFor="c-idade" className={labelClass}>Idade *</label><input id="c-idade" type="number" required min={20} max={35} className={fieldClass} value={dados.idade} onChange={e=>setCampo("idade",e.target.value)}/></div>
+                  <div><label htmlFor="c-idade" className={labelClass}>Idade *</label><input id="c-idade" type="number" required min={18} max={120} className={fieldClass} value={dados.idade} onChange={e=>setCampo("idade",e.target.value)}/></div>
                 </div>
                 <div><label htmlFor="c-situacao" className={labelClass}>O que fazes atualmente? *</label><select id="c-situacao" required className={fieldClass} value={dados.situacao} onChange={e=>setCampo("situacao",e.target.value)}><option value="">Seleciona uma opção</option>{["Estudo","Trabalho por conta de outrem","Trabalho por conta própria","Procuro emprego","Estudo e trabalho","Outra situação"].map(x=><option key={x}>{x}</option>)}</select></div>
                 <div><label htmlFor="c-formacao" className={labelClass}>Percurso académico (opcional)</label><select id="c-formacao" className={fieldClass} value={dados.formacao} onChange={e=>setCampo("formacao",e.target.value)}><option value="">Prefiro não indicar</option>{["Até ao 9.º ano","Secundário incompleto","Secundário concluído","Ensino profissional","Licenciatura em curso","Licenciatura concluída","Pós-graduação / mestrado","Outro"].map(x=><option key={x}>{x}</option>)}</select></div>
