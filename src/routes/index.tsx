@@ -114,8 +114,8 @@ function Index() {
               </a>
             </div>
           </div>
-          <div className="relative mx-auto flex w-full max-w-[400px] items-end justify-center self-end md:max-w-[520px]" aria-label="Fotografia profissional de João Vaz">
-            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain object-bottom"/>
+          <div className="relative mx-auto w-full max-w-[350px] bg-[#071525] p-6 md:ml-auto md:mr-6 md:max-w-[460px] md:p-9" aria-label="Fotografia profissional de João Vaz">
+            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
           </div>
         </div>
       </section>
