@@ -1,0 +1,28 @@
+name: Publicar pré-visualização sem alterar joaovaz.co
+
+on:
+  push:
+    branches:
+      - preview/home-hero-ebook-layout
+  workflow_dispatch:
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+      - name: Construir site de revisão
+        run: bun run build
+      - name: Publicar Worker isolado (não alterar site principal)
+        run: bunx wrangler deploy --name joaovaz-preview
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
