@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 
-const bookUrl = "https://www.canva.com/d/AahnipcRMa5rLoh";
+const bookUrl = "/da-ideia-a-acao.pdf";
 
 export const Route = createFileRoute("/ebook")({
   head: () => ({
@@ -34,7 +34,7 @@ function EbookPage() {
                 <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center border border-bronze bg-bronze px-7 text-xs font-semibold tracking-wider text-background transition-opacity hover:opacity-90">LER O EBOOK GRATUITAMENTE ↗</a>
                 <span className="text-sm text-muted-foreground">40 páginas · Acesso gratuito</span>
               </div>
-              <p className="mt-4 max-w-lg text-xs leading-relaxed text-muted-foreground">A leitura abre numa página externa do Canva. Não é necessário fornecer dados pessoais neste site para aceder.</p>
+              <p className="mt-4 max-w-lg text-xs leading-relaxed text-muted-foreground">A leitura abre diretamente em PDF, numa nova aba. Podes ler online ou guardar o ficheiro, sem criar conta.</p>
             </div>
             <div className="flex justify-center">
               <div className="relative flex aspect-[148/210] w-full max-w-[290px] flex-col bg-[#0D1B2A] px-9 pb-9 pt-12 shadow-[0_30px_70px_rgba(0,0,0,0.3)] md:px-11">
