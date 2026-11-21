@@ -133,10 +133,10 @@ function Index() {
               <a href="#areas" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background">EXPLORAR SOLUÇÕES →</a>
             </article>
             <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
-              <p className="text-[11px] tracking-[.23em] text-bronze">02 / JOVENS &amp; IDEIAS</p>
-              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Jovens &amp; Ideias</h3>
+              <p className="text-[11px] tracking-[.23em] text-bronze">02 / EMPREENDEDORISMO</p>
+              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Empreendedorismo</h3>
               <p className="mt-6 flex-1 leading-7 text-muted-foreground">Empreendedorismo, descoberta de oportunidades e apoio para transformar ideias em ações. Para quem já tem uma ideia e para quem quer descobrir por onde começar.</p>
-              <a href="/jovens-ideias" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze px-6 text-xs font-semibold tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">EXPLORAR JOVENS &amp; IDEIAS →</a>
+              <a href="/empreendedorismo" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze px-6 text-xs font-semibold tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">EXPLORAR EMPREENDEDORISMO →</a>
             </article>
           </div>
         </div>
