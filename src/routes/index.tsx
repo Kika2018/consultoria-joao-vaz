@@ -91,50 +91,31 @@ function Index() {
     <div id="top" className="min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      {/* HERO */}
-      <section className="relative flex min-h-screen items-center px-6 pt-32 md:px-12">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              "radial-gradient(60% 50% at 30% 40%, color-mix(in oklab, var(--bronze) 10%, transparent) 0%, transparent 70%)",
-          }}
-        />
-        <div className="relative mx-auto w-full max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-[12px] leading-relaxed tracking-[0.2em] text-bronze md:whitespace-nowrap md:text-[18px] md:leading-normal md:tracking-editorial">
-              FORMAÇÃO CORPORATIVA<span className="hidden md:inline">&nbsp;·&nbsp;</span><span className="md:hidden"> · </span>DESENVOLVIMENTO COMERCIAL
-            </p>
-            <h1 className="mt-10 font-serif text-7xl leading-[0.95] tracking-tight text-foreground md:text-[10rem]">
-              João
-              <br />
-              <span className="italic">Vaz</span>
+      {/* HERO — fotografia profissional original */}
+      <section className="relative overflow-hidden px-6 pt-28 md:px-12 md:pt-28">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
+        <div className="relative mx-auto grid min-h-[590px] max-w-7xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
+          <div className="relative z-10 py-10 md:py-14">
+            <p className="text-xs uppercase tracking-[.23em] text-bronze">PESSOAS PRIMEIRO · APLICAÇÃO IMEDIATA</p>
+            <h1 className="mt-7 max-w-[750px] font-serif text-[clamp(2.8rem,5.7vw,6.2rem)] leading-[1.05] tracking-tight text-foreground">
+              Formação <span className="italic text-bronze">Corporativa.</span><br />
+              Desenvolvimento <span className="italic text-bronze">Comercial.</span>
             </h1>
-            <span className="mt-10 block h-px w-20 bg-bronze" />
-            <p className="mt-10 max-w-xl font-serif text-2xl italic leading-relaxed text-foreground/90 md:text-3xl">
-              Pessoas que aprendem.
-              <br />
-              Organizações que crescem.
+            <span className="mt-8 block h-px w-20 bg-bronze"/>
+            <p className="mt-8 max-w-xl font-serif text-[clamp(1.35rem,2.3vw,2.15rem)] italic leading-snug text-foreground/90">
+              Pessoas que aprendem.<br />Organizações que crescem.
             </p>
-            <div className="mt-12">
-              <a
-                href="#contacto"
-                className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
-              >
-                AGENDAR REUNIÃO
-                <span className="transition-transform group-hover:translate-x-1">
-                  →
-                </span>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a href="#areas" className="inline-flex min-h-12 items-center border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background transition-colors hover:bg-bronze/90">
+                CONHECER O MEU TRABALHO →
+              </a>
+              <a href="#contacto" className="inline-flex min-h-12 items-center border border-bronze px-6 text-xs tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">
+                ENTRAR EM CONTACTO →
               </a>
             </div>
           </div>
-
-          <div className="absolute bottom-0 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
-            <span className="text-[10px] tracking-editorial text-muted-foreground">
-              SCROLL
-            </span>
-            <span className="h-12 w-px bg-border" />
+          <div className="relative mx-auto w-full max-w-[350px] bg-[#071525] p-6 md:ml-auto md:mr-6 md:max-w-[460px] md:p-9" aria-label="Fotografia profissional de João Vaz">
+            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
           </div>
         </div>
       </section>
