@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "/#empresas", label: "Empresas" },
-  { href: "/jovens-ideias", label: "Jovens & Ideias" },
+  { href: "/empreendedorismo", label: "Empreendedorismo" },
   { href: "/ebook", label: "eBook" },
   { href: "/#sobre", label: "Sobre" },
   { href: "/#contacto", label: "Contacto" },
