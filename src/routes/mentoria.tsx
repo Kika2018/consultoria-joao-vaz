@@ -37,30 +37,31 @@ function MentoriaPage() {
   const [dados,setDados] = useState<Candidatura>(camposIniciais);
   const [privacidade,setPrivacidade] = useState(false);
   const [comunicacoes,setComunicacoes] = useState(false);
-  const [emailPreparado,setEmailPreparado] = useState(false);
+  const [estadoEnvio,setEstadoEnvio] = useState<"inicial"|"aEnviar"|"sucesso"|"erro">("inicial");
+  const [mensagemEnvio,setMensagemEnvio] = useState("");
+  const [website,setWebsite] = useState("");
   const setCampo = (campo:keyof Candidatura,valor:string) => setDados(d=>({...d,[campo]:valor}));
-  const submeter = (e:FormEvent<HTMLFormElement>) => {
+  const submeter = async (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!privacidade) return;
-    // Provisório: enquanto não existir armazenamento de candidaturas, não
-    // prometemos confirmação automática nem gravação de dados no site.
-    const corpo = [
-      "CANDIDATURA — MENTORIA EMPREENDEDORA",
-      "Nome: "+dados.nome,"Email: "+dados.email,"Idade: "+dados.idade,
-      "Situação atual: "+dados.situacao,"Percurso académico: "+(dados.formacao||"Não indicado"),
-      "Tem ideia: "+dados.temIdeia,"Ideia/oportunidade: "+(dados.descricaoIdeia||"Não indicada"),
-      "Fase da ideia: "+(dados.faseIdeia||"Não aplicável"),
-      "Experiência empreendedora: "+dados.experiencia,
-      "Detalhe: "+(dados.experienciaDetalhe||"Não indicado"),
-      "Conhecimentos de IA: "+dados.ia,"Como usa IA: "+(dados.usoIa||"Não indicado"),
-      "Motivação: "+dados.motivacao,"Maior desafio: "+dados.desafio,
-      "Disponibilidade: "+dados.disponibilidade,"Origem: "+dados.origem,
-      "Aceitou informação de privacidade: Sim",
-      "Aceitou comunicações futuras (opcional): "+(comunicacoes?"Sim":"Não"),
-    ].join("\n\n");
-    const mailto = "mailto:geral@joaovaz.co?subject="+encodeURIComponent("Candidatura Mentoria — "+dados.nome)+"&body="+encodeURIComponent(corpo);
-    setEmailPreparado(true);
-    window.location.href=mailto;
+    if (!privacidade || estadoEnvio === "aEnviar") return;
+    setEstadoEnvio("aEnviar");
+    setMensagemEnvio("");
+    try {
+      const res = await fetch("/api/candidaturas",{
+        method:"POST",headers:{"content-type":"application/json"},
+        body:JSON.stringify({...dados,privacidade,comunicacoes,website})
+      });
+      const resposta = await res.json() as {message?:string};
+      if (!res.ok) throw new Error(resposta.message || "Não foi possível enviar a candidatura.");
+      setEstadoEnvio("sucesso");
+      setMensagemEnvio("Candidatura recebida! A seleção é manual; receberás uma resposta após a análise.");
+      setDados(camposIniciais);
+      setPrivacidade(false);
+      setComunicacoes(false);
+    } catch (erro) {
+      setEstadoEnvio("erro");
+      setMensagemEnvio(erro instanceof Error ? erro.message : "Ocorreu um erro. Tenta novamente.");
+    }
   };
   return (
     <div className="min-h-screen bg-background text-foreground" id="top">
@@ -107,6 +108,7 @@ function MentoriaPage() {
             <h2 className="mt-5 font-serif text-4xl md:text-5xl">Conta-me um pouco sobre ti.</h2>
             <p className="mt-5 text-base leading-8 text-muted-foreground">Não há respostas certas nem erradas. Quero perceber o teu ponto de partida e o que procuras. A candidatura não garante seleção.</p>
             <form onSubmit={submeter} className="mt-10 space-y-9">
+              <div className="absolute -left-[9999px]" aria-hidden="true"><label htmlFor="c-website">Não preencher</label><input id="c-website" tabIndex={-1} autoComplete="off" value={website} onChange={e=>setWebsite(e.target.value)}/></div>
               <fieldset className="space-y-5 border-t border-bronze/50 pt-7">
                 <legend className="pr-3 font-serif text-2xl">01 · Quem és</legend>
                 <div><label htmlFor="c-nome" className={labelClass}>Nome completo *</label><input id="c-nome" required maxLength={120} autoComplete="name" className={fieldClass} value={dados.nome} onChange={e=>setCampo("nome",e.target.value)} /></div>
@@ -137,15 +139,15 @@ function MentoriaPage() {
                 <div><label htmlFor="c-origem" className={labelClass}>Onde soubeste deste projeto? *</label><select id="c-origem" required className={fieldClass} value={dados.origem} onChange={e=>setCampo("origem",e.target.value)}><option value="">Seleciona uma opção</option>{["Instagram — anúncio","Instagram — publicação / partilha","Facebook — anúncio","Facebook — publicação / partilha","Recomendação de alguém","Outro canal"].map(x=><option key={x}>{x}</option>)}</select></div>
               </fieldset>
               <div className="space-y-4 border-t border-bronze/50 pt-7 text-sm leading-6 text-muted-foreground">
-                <label className="flex items-start gap-3"><input type="checkbox" required checked={privacidade} onChange={e=>setPrivacidade(e.target.checked)} className="mt-1 accent-[#A8874A]"/><span>Li e aceito que os dados fornecidos sejam utilizados por João Vaz exclusivamente para analisar e responder à minha candidatura à mentoria. *</span></label>
+                <label className="flex items-start gap-3"><input type="checkbox" required checked={privacidade} onChange={e=>setPrivacidade(e.target.checked)} className="mt-1 accent-[#A8874A]"/><span>Li a <a href="/privacidade" target="_blank" rel="noopener noreferrer" className="text-bronze underline">informação de privacidade</a> e compreendo que os dados serão utilizados para avaliar e responder à minha candidatura. *</span></label>
                 <label className="flex items-start gap-3"><input type="checkbox" checked={comunicacoes} onChange={e=>setComunicacoes(e.target.checked)} className="mt-1 accent-[#A8874A]"/><span>Gostaria de receber futuras informações sobre iniciativas e conteúdos de João Vaz. (Opcional; não influencia a seleção.)</span></label>
                 <p className="text-xs">As candidaturas são analisadas pessoalmente por João Vaz, sem seleção automática. Não incluas informações confidenciais da tua ideia no formulário.</p>
               </div>
               <div className="border border-bronze/40 bg-background/70 p-5">
-                <p className="text-sm font-semibold text-foreground">Versão de teste do formulário</p>
-                <p className="mt-2 text-xs leading-6 text-muted-foreground">Por enquanto, este botão prepara a candidatura no teu programa de email. Para a campanha oficial, será substituído por envio direto, armazenamento seguro e confirmação automática. A candidatura só chega após o envio efetivo do email.</p>
-                <button type="submit" className="mt-5 inline-flex min-h-14 items-center border border-bronze bg-bronze px-7 text-xs font-semibold tracking-wider text-background">PREPARAR CANDIDATURA POR EMAIL →</button>
-                {emailPreparado && <p role="status" className="mt-3 text-sm text-foreground">Confirma o envio no teu programa de email. O formulário ainda não regista candidaturas automaticamente.</p>}
+                <p className="text-sm font-semibold text-foreground">Antes de enviares</p>
+                <p className="mt-2 text-xs leading-6 text-muted-foreground">A candidatura é gratuita e não garante participação. As respostas ficam guardadas numa base de dados privada e serão analisadas pessoalmente por João Vaz.</p>
+                <button type="submit" disabled={estadoEnvio === "aEnviar"} className="mt-5 inline-flex min-h-14 items-center border border-bronze bg-bronze px-7 text-xs font-semibold tracking-wider text-background disabled:opacity-50">{estadoEnvio === "aEnviar" ? "A ENVIAR..." : "ENVIAR CANDIDATURA →"}</button>
+                {mensagemEnvio && <p role="status" aria-live="polite" className={`mt-3 text-sm ${estadoEnvio==="erro"?"text-red-400":"text-foreground"}`}>{mensagemEnvio}</p>}
               </div>
             </form>
           </div>
