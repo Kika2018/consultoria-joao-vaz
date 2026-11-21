@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteNav } from "@/components/SiteNav";
 
 export const Route = createFileRoute("/mentoria")({
   head: () => ({
@@ -28,7 +27,7 @@ function MentoriaPage() {
   const contacto = `mailto:${email}?subject=${assunto}&body=${corpo}`;
   return (
     <div className="min-h-screen bg-background text-foreground" id="top">
-      <SiteNav/>
+      <header className="absolute inset-x-0 top-0 z-20 px-6 py-6 md:px-12 md:py-8"><div className="mx-auto flex max-w-7xl items-center justify-between"><a href="/" className="font-serif text-lg tracking-[.18em] text-foreground">JOÃO VAZ</a><span className="text-[10px] tracking-[.18em] text-bronze">DA IDEIA À AÇÃO</span></div></header>
       <main>
         <section className="relative overflow-hidden px-6 pb-20 pt-36 md:px-12 md:pb-28 md:pt-48">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-50" style={{background:"radial-gradient(ellipse 60% 70% at 80% 30%, #243a56 0%, transparent 75%)"}}/>
