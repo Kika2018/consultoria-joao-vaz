@@ -23,21 +23,21 @@ function EbookPage() {
     <div className="min-h-screen bg-background text-foreground" id="top">
       <SiteNav />
       <main>
-        <section className="px-6 pb-20 pt-36 md:px-12 md:pb-28 md:pt-44">
-          <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-[1fr_0.8fr] md:gap-24">
+        <section className="px-6 pb-12 pt-24 md:px-12 md:pb-16 md:pt-24">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-[1fr_0.8fr] md:gap-14">
             <div>
-              <p className="mb-7 text-[11px] tracking-[0.25em] text-bronze">EBOOK GRATUITO · JOÃO VAZ</p>
-              <h1 className="font-serif text-6xl leading-[1.02] tracking-tight md:text-8xl">Da Ideia<br /><em className="text-bronze">à Ação.</em></h1>
-              <p className="mt-9 max-w-xl font-serif text-2xl leading-snug md:text-3xl">Pensar melhor, compreender pessoas e transformar conhecimento em resultados.</p>
-              <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">Um guia com reflexões, experiências profissionais e exercícios para quem quer passar das boas ideias à aplicação prática — no trabalho, nas equipas e nos projetos.</p>
-              <div className="mt-10 flex flex-wrap items-center gap-5">
+              <p className="mb-3 text-[11px] tracking-[0.25em] text-bronze">EBOOK GRATUITO · JOÃO VAZ</p>
+              <h1 className="font-serif text-5xl leading-[1.02] tracking-tight md:text-7xl">Da Ideia<br /><em className="text-bronze">à Ação.</em></h1>
+              <p className="mt-5 max-w-xl font-serif text-xl leading-snug md:text-2xl">Pensar melhor, compreender pessoas e transformar conhecimento em resultados.</p>
+              <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground md:text-base">Um guia com reflexões, experiências profissionais e exercícios para quem quer passar das boas ideias à aplicação prática — no trabalho, nas equipas e nos projetos.</p>
+              <div className="mt-6 flex flex-wrap items-center gap-5">
                 <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center border border-bronze bg-bronze px-7 text-xs font-semibold tracking-wider text-background transition-opacity hover:opacity-90">LER O EBOOK GRATUITAMENTE ↗</a>
                 <span className="text-sm text-muted-foreground">40 páginas · Acesso gratuito</span>
               </div>
               <p className="mt-4 max-w-lg text-xs leading-relaxed text-muted-foreground">A leitura abre numa página externa do Canva. Não é necessário fornecer dados pessoais neste site para aceder.</p>
             </div>
             <div className="flex justify-center">
-              <div className="relative flex aspect-[148/210] w-full max-w-[350px] flex-col bg-[#0D1B2A] px-9 pb-9 pt-12 shadow-[0_30px_70px_rgba(0,0,0,0.3)] md:px-11">
+              <div className="relative flex aspect-[148/210] w-full max-w-[290px] flex-col bg-[#0D1B2A] px-9 pb-9 pt-12 shadow-[0_30px_70px_rgba(0,0,0,0.3)] md:px-11">
                 <p className="text-sm tracking-wider text-[#F5F0EB]">João Vaz</p>
                 <span className="mt-10 h-px w-16 bg-[#A8874A]"/>
                 <div className="flex flex-1 flex-col justify-center">
