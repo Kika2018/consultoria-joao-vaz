@@ -19,27 +19,28 @@ jobs:
         run: bun install --frozen-lockfile
       - name: Criar ou ligar base de dados privada e instalar estrutura
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_D1_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           set -euo pipefail
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then echo "Falta configurar CLOUDFLARE_D1_API_TOKEN com D1 Edit."; exit 1; fi
           bunx wrangler d1 list --json > /tmp/d1-list.json
-          if ! python3 -c 'import json; a=json.load(open("/tmp/d1-list.json")); exit(0 if any(x.get("name")=="joaovaz-mentoria-candidaturas" for x in a) else 1)'; then
-            bunx wrangler d1 create joaovaz-mentoria-candidaturas
+          if ! python3 -c 'import json; a=json.load(open("/tmp/d1-list.json")); exit(0 if any(x.get("name")=="joaovaz-mentoria-candidaturas-teste" for x in a) else 1)'; then
+            bunx wrangler d1 create joaovaz-mentoria-candidaturas-teste
           fi
           bunx wrangler d1 list --json > /tmp/d1-list.json
           python3 - <<'PY'
           import json,re
           databases=json.load(open("/tmp/d1-list.json"))
-          entry=next((x for x in databases if x.get("name")=="joaovaz-mentoria-candidaturas"),None)
+          entry=next((x for x in databases if x.get("name")=="joaovaz-mentoria-candidaturas-teste"),None)
           if entry is None: raise RuntimeError("Não foi possível obter o ID da base de dados D1")
           path="wrangler.jsonc"
           config=json.loads(re.sub(r",\s*}", "}", open(path).read()))
           config["d1_databases"]=[{"binding":"MENTORIA_DB","database_name":entry["name"],"database_id":entry["uuid"]}]
           open(path,"w").write(json.dumps(config,indent=2)+"\n")
-          print("Ligação D1 configurada: joaovaz-mentoria-candidaturas")
+          print("Ligação D1 configurada: joaovaz-mentoria-candidaturas-teste")
           PY
-          bunx wrangler d1 execute joaovaz-mentoria-candidaturas --remote --file db/001_candidaturas.sql --yes
+          bunx wrangler d1 execute joaovaz-mentoria-candidaturas-teste --remote --file db/001_candidaturas.sql --yes
       - name: Construir site
         run: bun run build
       - name: Publicar Worker de revisão separado do site principal
