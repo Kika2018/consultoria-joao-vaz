@@ -120,6 +120,28 @@ function Index() {
         </div>
       </section>
 
+      {/* DOIS CAMINHOS — empresas e mentoria */}
+      <section id="empresas" className="relative bg-ink px-6 py-20 md:px-12 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs uppercase tracking-[.23em] text-bronze">DOIS CAMINHOS. UM PROPÓSITO.</p>
+          <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-tight text-foreground md:text-6xl">Desenvolver pessoas.<br/><em className="text-bronze">Transformar ideias em ação.</em></h2>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-7">
+            <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
+              <p className="text-[11px] tracking-[.23em] text-bronze">01 / EMPRESAS</p>
+              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Formação Corporativa<br/> & Desenvolvimento Comercial</h3>
+              <p className="mt-6 flex-1 leading-7 text-muted-foreground">Formação, comunicação, negociação, competências comerciais e aprendizagem com aplicação prática no contexto das organizações.</p>
+              <a href="#areas" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background">EXPLORAR SOLUÇÕES →</a>
+            </article>
+            <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
+              <p className="text-[11px] tracking-[.23em] text-bronze">02 / JOVENS E IDEIAS</p>
+              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Mentoria<br/>Empreendedora</h3>
+              <p className="mt-6 flex-1 leading-7 text-muted-foreground">Para jovens dos 20 aos 35 anos, com ou sem uma ideia de negócio e independentemente do percurso académico. Descobrir oportunidades, ganhar confiança e dar os primeiros passos com método.</p>
+              <a href="/mentoria" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze px-6 text-xs font-semibold tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">CONHECER O PROJETO-PILOTO →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* SOBRE */}
       <section id="sobre" className="bg-ink px-6 py-32 md:px-12 md:py-40">
         <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-12">
