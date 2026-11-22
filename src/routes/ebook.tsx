@@ -23,7 +23,7 @@ function EbookPage() {
     <div className="min-h-screen bg-background text-foreground" id="top">
       <SiteNav />
       <main>
-        <section className="px-6 pb-12 pt-24 md:px-12 md:pb-16 md:pt-24">
+        <section className="px-6 pb-12 pt-20 md:px-12 md:pb-16 md:pt-20">
           <div className="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-[1fr_0.8fr] md:gap-14">
             <div>
               <p className="mb-3 text-[11px] tracking-[0.25em] text-bronze">EBOOK GRATUITO · JOÃO VAZ</p>
