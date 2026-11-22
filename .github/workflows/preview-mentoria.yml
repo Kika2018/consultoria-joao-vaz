@@ -89,7 +89,7 @@ jobs:
           bunx wrangler d1 execute joaovaz-mentoria-candidaturas-teste --remote \
             --command "SELECT COUNT(*) AS registos FROM candidaturas WHERE email='${EMAIL}'" --yes > /tmp/candidaturas-contagem.txt
           cat /tmp/candidaturas-contagem.txt
-          if ! grep -Eq '[│|][[:space:]]*1[[:space:]]*[│|]' /tmp/candidaturas-contagem.txt; then
+          if ! grep -Eq '"registos": 1' /tmp/candidaturas-contagem.txt; then
             echo "A gravação na base de dados ainda não foi confirmada."
             exit 1
           fi
