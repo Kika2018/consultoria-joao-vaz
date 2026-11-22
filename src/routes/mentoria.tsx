@@ -25,11 +25,11 @@ type Candidatura = {
   nome: string; email: string; idade: string; situacao: string; formacao: string;
   temIdeia: string; descricaoIdeia: string; faseIdeia: string; experiencia: string;
   experienciaDetalhe: string; ia: string; usoIa: string; motivacao: string;
-  desafio: string; disponibilidade: string; origem: string;
+  desafio: string; disponibilidade: string; horarioPreferido: string; origem: string;
 };
 const camposIniciais: Candidatura = {
   nome:"",email:"",idade:"",situacao:"",formacao:"",temIdeia:"",descricaoIdeia:"",faseIdeia:"",
-  experiencia:"",experienciaDetalhe:"",ia:"",usoIa:"",motivacao:"",desafio:"",disponibilidade:"",origem:""
+  experiencia:"",experienciaDetalhe:"",ia:"",usoIa:"",motivacao:"",desafio:"",disponibilidade:"",horarioPreferido:"",origem:""
 };
 const fieldClass = "mt-2 block w-full rounded-none border border-bronze/30 bg-background px-4 py-3 text-base text-foreground outline-none focus:border-bronze focus:ring-1 focus:ring-bronze";
 const labelClass = "block text-sm font-medium text-foreground";
@@ -136,6 +136,7 @@ function MentoriaPage() {
                 <div><label htmlFor="c-motivacao" className={labelClass}>Porque te queres candidatar a esta mentoria? *</label><textarea id="c-motivacao" required minLength={30} maxLength={1200} rows={4} className={fieldClass} placeholder="O que gostavas de descobrir, aprender ou conseguir fazer?" value={dados.motivacao} onChange={e=>setCampo("motivacao",e.target.value)}/></div>
                 <div><label htmlFor="c-desafio" className={labelClass}>O que te impede, neste momento, de avançar? *</label><select id="c-desafio" required className={fieldClass} value={dados.desafio} onChange={e=>setCampo("desafio",e.target.value)}><option value="">Seleciona uma opção</option>{["Não sei que ideia escolher","Falta-me confiança ou orientação","Não sei como testar uma ideia","Falta-me tempo ou organização","Falta-me conhecimento ou recursos","Outro motivo"].map(x=><option key={x}>{x}</option>)}</select></div>
                 <div><label htmlFor="c-disp" className={labelClass}>Consegues dedicar tempo à mentoria e realizar pequenas tarefas entre sessões? *</label><select id="c-disp" required className={fieldClass} value={dados.disponibilidade} onChange={e=>setCampo("disponibilidade",e.target.value)}><option value="">Seleciona uma opção</option>{["Sim, tenho disponibilidade","Depende dos horários","Ainda preciso de avaliar"].map(x=><option key={x}>{x}</option>)}</select></div>
+                <div><label htmlFor="c-horario" className={labelClass}>Qual o horário que preferes para as sessões online? *</label><select id="c-horario" required className={fieldClass} value={dados.horarioPreferido} onChange={e=>setCampo("horarioPreferido",e.target.value)}><option value="">Seleciona uma opção</option>{["Dias úteis, 19h00–21h00","Dias úteis, 20h00–22h00","Sábado, 10h00–12h00","Tenho flexibilidade para qualquer uma destas opções"].map(x=><option key={x}>{x}</option>)}</select><p className="mt-2 text-xs text-muted-foreground">A preferência é indicativa. O horário definitivo será comunicado antes da confirmação da participação.</p></div>
                 <div><label htmlFor="c-origem" className={labelClass}>Onde soubeste deste projeto? *</label><select id="c-origem" required className={fieldClass} value={dados.origem} onChange={e=>setCampo("origem",e.target.value)}><option value="">Seleciona uma opção</option>{["Instagram — anúncio","Instagram — publicação / partilha","Facebook — anúncio","Facebook — publicação / partilha","Recomendação de alguém","Outro canal"].map(x=><option key={x}>{x}</option>)}</select></div>
               </fieldset>
               <div className="space-y-4 border-t border-bronze/50 pt-7 text-sm leading-6 text-muted-foreground">
