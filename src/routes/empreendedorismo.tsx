@@ -19,7 +19,7 @@ function EmpreendedorismoPage() {
     <div className="min-h-screen bg-background text-foreground" id="top">
       <SiteNav />
       <main>
-        <section className="px-6 pb-20 pt-36 md:px-12 md:pb-28 md:pt-48">
+        <section className="px-6 pb-20 pt-28 md:px-12 md:pb-28 md:pt-28">
           <div className="mx-auto max-w-7xl">
             <p className="text-xs uppercase tracking-[.23em] text-bronze">EMPREENDEDORISMO</p>
             <h1 className="mt-7 max-w-5xl font-serif text-[clamp(3rem,6.5vw,6.3rem)] leading-[1.05]">O teu percurso não define <em className="text-bronze">o teu potencial.</em></h1>
