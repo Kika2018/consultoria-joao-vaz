@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS candidaturas (
   motivacao TEXT NOT NULL,
   desafio TEXT NOT NULL,
   disponibilidade TEXT NOT NULL,
+  horario_preferido TEXT NOT NULL,
   origem TEXT NOT NULL,
   consentimento_informativo INTEGER NOT NULL DEFAULT 1,
   consentimento_marketing INTEGER NOT NULL DEFAULT 0
