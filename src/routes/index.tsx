@@ -121,7 +121,7 @@ function Index() {
       </section>
 
       {/* DOIS CAMINHOS — empresas e mentoria */}
-      <section id="empresas" className="relative bg-ink px-6 py-20 md:px-12 md:py-28">
+      <section id="empresas" className="relative bg-ink px-6 py-14 md:px-12 md:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[.23em] text-bronze">DOIS CAMINHOS. UM PROPÓSITO.</p>
           <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-tight text-foreground md:text-6xl">Desenvolver pessoas.<br/><em className="text-bronze">Transformar ideias em ação.</em></h2>
@@ -143,7 +143,7 @@ function Index() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="bg-ink px-6 py-32 md:px-12 md:py-40">
+      <section id="sobre" className="bg-ink px-6 py-20 md:px-12 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-12">
           <div className="md:col-span-4">
             <SectionLabel>SOBRE</SectionLabel>
@@ -181,7 +181,7 @@ function Index() {
       </section>
 
       {/* ÁREAS */}
-      <section id="areas" className="px-6 py-32 md:px-12 md:py-40">
+      <section id="areas" className="px-6 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
@@ -194,7 +194,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-20 divide-y divide-border border-y border-border">
+          <div className="mt-12 divide-y divide-border border-y border-border">
             {areas.map((a) => (
               <article
                 key={a.n}
@@ -222,7 +222,7 @@ function Index() {
       </section>
 
       {/* FILOSOFIA */}
-      <section id="filosofia" className="bg-ink px-6 py-32 md:px-12 md:py-40">
+      <section id="filosofia" className="bg-ink px-6 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
@@ -243,7 +243,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-24 grid gap-12 md:grid-cols-3 md:gap-10">
+          <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
             {principles.map((p) => (
               <div key={p.n} className="space-y-5">
                 <span className="font-serif text-lg text-bronze">{p.n}</span>
@@ -261,7 +261,7 @@ function Index() {
       </section>
 
       {/* FORMAÇÃO & CERTIFICAÇÕES */}
-      <section id="formacao" className="px-6 py-32 md:px-12 md:py-40">
+      <section id="formacao" className="px-6 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-4">
@@ -328,7 +328,7 @@ function Index() {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="px-6 py-32 md:px-12 md:py-40">
+      <section id="contacto" className="px-6 py-20 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
