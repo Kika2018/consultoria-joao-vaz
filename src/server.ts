@@ -74,7 +74,7 @@ type MentoriaEnv = { MENTORIA_DB?: DbBinding };
 const fields = [
   "nome","email","idade","situacao","formacao","temIdeia","descricaoIdeia",
   "faseIdeia","experiencia","experienciaDetalhe","ia","usoIa","motivacao",
-  "desafio","disponibilidade","origem",
+  "desafio","disponibilidade","horarioPreferido","origem",
 ] as const;
 
 async function submitMentoria(request: Request, env: MentoriaEnv): Promise<Response> {
@@ -107,7 +107,7 @@ async function submitMentoria(request: Request, env: MentoriaEnv): Promise<Respo
     data[key] = (value ?? "").toString().trim();
     if (data[key].length > 1200) return reply(400,"Resposta demasiado longa.");
   }
-  const required = ["nome","email","idade","situacao","temIdeia","experiencia","ia","motivacao","desafio","disponibilidade","origem"];
+  const required = ["nome","email","idade","situacao","temIdeia","experiencia","ia","motivacao","desafio","disponibilidade","horarioPreferido","origem"];
   if (required.some(key => !data[key])) return reply(400,"Preenche os campos obrigatórios.");
   const idade = Number(data.idade);
   if (!Number.isInteger(idade) || idade < 18 || idade > 120) return reply(400,"A participação é reservada a adultos.");
@@ -121,13 +121,13 @@ async function submitMentoria(request: Request, env: MentoriaEnv): Promise<Respo
       `INSERT INTO candidaturas (
         id,nome,email,idade,situacao,formacao,tem_ideia,descricao_ideia,fase_ideia,
         experiencia,experiencia_detalhe,ia,uso_ia,motivacao,desafio,disponibilidade,origem,
-        consentimento_informativo,consentimento_marketing
-      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+        horario_preferido,consentimento_informativo,consentimento_marketing
+      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
     ).bind(
       crypto.randomUUID(),data.nome,data.email.toLowerCase(),idade,data.situacao,
       data.formacao,data.temIdeia,data.descricaoIdeia,data.faseIdeia,
       data.experiencia,data.experienciaDetalhe,data.ia,data.usoIa,
-      data.motivacao,data.desafio,data.disponibilidade,data.origem,
+      data.motivacao,data.desafio,data.disponibilidade,data.origem,data.horarioPreferido,
       1,raw.comunicacoes === true ? 1 : 0
     ).run();
     return reply(201,"Candidatura recebida. Obrigado! Entraremos em contacto após a análise.");
