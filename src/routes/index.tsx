@@ -92,7 +92,7 @@ function Index() {
       <SiteNav />
 
       {/* HERO — fotografia profissional original */}
-      <section className="relative overflow-hidden px-6 pt-28 md:px-12 md:pt-28">
+      <section className="relative overflow-hidden px-6 pt-20 md:px-12 md:pt-20">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
         <div className="relative mx-auto grid min-h-[590px] max-w-7xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
           <div className="relative z-10 py-10 md:py-14">
