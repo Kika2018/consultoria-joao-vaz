@@ -48,3 +48,49 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Testar envio real e gravação D1, eliminando candidatura fictícia
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_D1_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          EMAIL="teste-${GITHUB_RUN_ID}@example.invalid"
+          cleanup() {
+            bunx wrangler d1 execute joaovaz-mentoria-candidaturas-teste --remote --command "DELETE FROM candidaturas WHERE email='${EMAIL}'" --yes >/dev/null 2>&1 || true
+          }
+          trap cleanup EXIT
+          python3 - <<'PY'
+          import json,os
+          form={
+            "nome":"Candidatura Automatizada de Teste",
+            "email":"teste-"+os.environ["GITHUB_RUN_ID"]+"@example.invalid",
+            "idade":"31","situacao":"Trabalho por conta de outrem",
+            "formacao":"","temIdeia":"Não, quero descobrir oportunidades",
+            "descricaoIdeia":"","faseIdeia":"","experiencia":"Nunca, mas tenho curiosidade",
+            "experienciaDetalhe":"","ia":"Algum conhecimento","usoIa":"",
+            "motivacao":"Estou a testar a gravação real das candidaturas na base de dados.",
+            "desafio":"Encontrar uma ideia de negócio adequada",
+            "disponibilidade":"Sim, tenho disponibilidade",
+            "horarioPreferido":"Dias úteis, 20h00–22h00",
+            "origem":"Outro canal","privacidade":True,"comunicacoes":False,"website":""
+          }
+          open("/tmp/candidatura-teste.json","w").write(json.dumps(form))
+          PY
+          STATUS=$(curl --retry 3 --retry-delay 2 --silent --show-error --output /tmp/candidatura-resposta.json --write-out "%{http_code}" \
+            --header "Origin: https://joaovaz-mentoria-preview.jpgvaz.workers.dev" \
+            --header "Content-Type: application/json" \
+            --data-binary @/tmp/candidatura-teste.json \
+            "https://joaovaz-mentoria-preview.jpgvaz.workers.dev/api/candidaturas")
+          echo "Resposta HTTP de submissão: ${STATUS}"
+          if [ "${STATUS}" != "201" ]; then
+            python3 -c 'import json;print("Falha no teste:",json.load(open("/tmp/candidatura-resposta.json")).get("message","sem detalhe"))'
+            exit 1
+          fi
+          bunx wrangler d1 execute joaovaz-mentoria-candidaturas-teste --remote \
+            --command "SELECT COUNT(*) AS registos FROM candidaturas WHERE email='${EMAIL}'" --yes > /tmp/candidaturas-contagem.txt
+          cat /tmp/candidaturas-contagem.txt
+          if ! grep -Eq '[│|][[:space:]]*1[[:space:]]*[│|]' /tmp/candidaturas-contagem.txt; then
+            echo "A gravação na base de dados ainda não foi confirmada."
+            exit 1
+          fi
+          echo "Envio HTTP 201 e persistência D1 confirmados. Candidatura de teste será eliminada."
