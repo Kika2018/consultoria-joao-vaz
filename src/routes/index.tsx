@@ -167,12 +167,12 @@ function Index() {
       </section>
 
       {/* ÁREAS */}
-      <section id="areas" className="px-6 py-14 md:px-12 md:py-16">
+      <section id="areas" className="scroll-mt-24 px-6 py-14 md:px-12 md:pb-8 md:pt-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <SectionLabel>ÁREAS DE EXPERTISE</SectionLabel>
-              <h2 className="mt-6 font-serif text-4xl leading-tight text-foreground md:text-6xl">
+              <h2 className="mt-5 font-serif text-4xl leading-tight text-foreground md:mt-3 md:text-5xl md:leading-[1.05]">
                 Onde a experiência
                 <br />
                 encontra <span className="italic text-bronze/90">impacto.</span>
@@ -180,11 +180,11 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-8 divide-y divide-border border-y border-border md:mt-9">
+          <div className="mt-8 divide-y divide-border border-y border-border md:mt-5">
             {areas.map((a) => (
               <article
                 key={a.n}
-                className="group grid gap-4 py-7 transition-colors hover:bg-foreground/[0.02] md:grid-cols-12 md:gap-8 md:py-8"
+                className="group grid gap-4 py-7 transition-colors hover:bg-foreground/[0.02] md:grid-cols-12 md:items-start md:gap-6 md:py-3.5"
               >
                 <div className="md:col-span-1">
                   <span className="font-serif text-2xl text-bronze">
@@ -192,12 +192,12 @@ function Index() {
                   </span>
                 </div>
                 <div className="md:col-span-4">
-                  <h3 className="font-serif text-2xl text-foreground md:text-3xl">
+                  <h3 className="font-serif text-2xl text-foreground md:text-[1.65rem] md:leading-tight">
                     {a.title}
                   </h3>
                 </div>
                 <div className="md:col-span-7">
-                  <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-base md:leading-6">
                     {a.body}
                   </p>
                 </div>
