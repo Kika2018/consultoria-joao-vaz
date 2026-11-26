@@ -247,7 +247,7 @@ function Index() {
       </section>
 
       {/* FORMAÇÃO & CERTIFICAÇÕES */}
-      <section id="formacao" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[calc(100svh-6rem)] md:flex-col md:justify-center md:px-12 md:py-7">
+      <section id="formacao" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-7">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-4">
