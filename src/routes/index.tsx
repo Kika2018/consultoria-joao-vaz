@@ -92,20 +92,20 @@ function Index() {
       <SiteNav />
 
       {/* HERO — fotografia profissional original */}
-      <section className="relative overflow-hidden px-6 pt-20 md:px-12 md:pt-20">
+      <section className="relative overflow-hidden px-6 pt-7 md:px-12 md:pt-20">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
-        <div className="relative mx-auto grid min-h-[590px] max-w-7xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
-          <div className="relative z-10 py-10 md:py-14">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-6 md:min-h-[590px] md:grid-cols-[1.1fr_0.9fr] md:gap-12">
+          <div className="relative z-10 py-5 md:py-14">
             <p className="text-xs uppercase tracking-[.23em] text-bronze">PESSOAS PRIMEIRO · APLICAÇÃO IMEDIATA</p>
-            <h1 className="mt-7 max-w-[750px] font-serif text-[clamp(2.8rem,5.7vw,6.2rem)] leading-[1.05] tracking-tight text-foreground">
+            <h1 className="mt-5 max-w-[750px] font-serif text-[clamp(2.35rem,8.5vw,3.6rem)] leading-[1.05] tracking-tight text-foreground md:mt-7 md:text-[clamp(2.8rem,5.7vw,6.2rem)]">
               Formação <span className="italic text-bronze">Corporativa.</span><br />
               Desenvolvimento <span className="italic text-bronze">Comercial.</span>
             </h1>
-            <span className="mt-8 block h-px w-20 bg-bronze"/>
-            <p className="mt-8 max-w-xl font-serif text-[clamp(1.35rem,2.3vw,2.15rem)] italic leading-snug text-foreground/90">
+            <span className="mt-6 block h-px w-20 bg-bronze md:mt-8"/>
+            <p className="mt-6 max-w-xl font-serif text-[clamp(1.25rem,4.7vw,1.55rem)] italic leading-snug text-foreground/90 md:mt-8 md:text-[clamp(1.35rem,2.3vw,2.15rem)]">
               Pessoas que aprendem.<br />Organizações que crescem.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-7 flex flex-wrap gap-3 md:mt-9 md:gap-4">
               <a href="#areas" className="inline-flex min-h-12 items-center border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background transition-colors hover:bg-bronze/90">
                 CONHECER O MEU TRABALHO →
               </a>
