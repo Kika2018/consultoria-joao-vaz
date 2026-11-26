@@ -317,22 +317,22 @@ function Index() {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="px-6 py-20 md:px-12 md:py-24">
+      <section id="contacto" className="scroll-mt-24 px-6 py-16 md:flex md:min-h-[calc(100svh-6rem)] md:flex-col md:justify-center md:px-12 md:py-6">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-16 md:grid-cols-12">
+          <div className="grid gap-12 md:grid-cols-12 md:items-center md:gap-10">
             <div className="md:col-span-5">
               <SectionLabel>CONTACTO</SectionLabel>
-              <h2 className="mt-8 font-serif text-5xl leading-tight text-foreground md:text-7xl">
+              <h2 className="mt-6 font-serif text-5xl leading-tight text-foreground md:mt-4 md:text-6xl">
                 Vamos
                 <br />
                 <span className="italic text-bronze/90">conversar.</span>
               </h2>
-              <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:mt-5 md:text-base md:leading-7">
                 Cada projecto começa por uma conversa. A conversa começa com
                 contexto, não com fórmulas pré-definidas.
               </p>
 
-              <div className="mt-14 space-y-8">
+              <div className="mt-10 space-y-7 md:mt-7 md:space-y-5">
                 <div>
                   <p className="text-[11px] tracking-editorial text-bronze">
                     E-MAIL
@@ -370,7 +370,7 @@ function Index() {
                   subject,
                 )}&body=${encodeURIComponent(body)}`;
               }}
-              className="space-y-8 md:col-span-6 md:col-start-7"
+              className="space-y-8 md:col-span-6 md:col-start-7 md:space-y-4"
             >
               <Field name="nome" label="NOME" placeholder="O seu nome" required />
               <Field name="email" label="E-MAIL" type="email" placeholder="o.seu@email.pt" required />
@@ -381,10 +381,10 @@ function Index() {
                 label="MENSAGEM (OPCIONAL)"
                 placeholder="Descreva brevemente o que procura…"
               />
-              <div className="space-y-3">
+              <div className="space-y-3 md:space-y-2">
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
+                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial md:py-3" text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
                 >
                   AGENDAR REUNIÃO
                   <span className="transition-transform group-hover:translate-x-1">
@@ -434,7 +434,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
+        className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg md:mt-1 md:pb-2 text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
     </label>
   );
@@ -455,10 +455,10 @@ function FieldArea({
         {label}
       </span>
       <textarea
-        rows={4}
+        rows={3}
         name={name}
         placeholder={placeholder}
-        className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
+        className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg md:mt-1 md:h-16 md:pb-2 text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
     </label>
   );
