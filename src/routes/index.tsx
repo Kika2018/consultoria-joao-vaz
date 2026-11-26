@@ -122,7 +122,7 @@ function Index() {
               </a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[290px] bg-[#071525] p-5 md:ml-auto md:mr-6 md:max-w-[410px] md:p-7" aria-label="Fotografia profissional de João Vaz">
+          <div className="relative mx-auto hidden w-full bg-[#071525] md:ml-auto md:mr-6 md:block md:max-w-[410px] md:p-7" aria-label="Fotografia profissional de João Vaz">
             <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial e empreendedorismo" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
           </div>
         </div>
@@ -140,6 +140,9 @@ function Index() {
               <br />
               <span className="italic text-bronze/90">no terreno.</span>
             </h2>
+            <div className="mx-auto mt-8 w-full max-w-[290px] bg-[#071525] p-5 md:hidden" aria-label="Fotografia profissional de João Vaz">
+              <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial e empreendedorismo" width="420" height="525" loading="lazy" className="block h-auto w-full object-contain"/>
+            </div>
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:col-start-6 md:text-lg">
             <p>
