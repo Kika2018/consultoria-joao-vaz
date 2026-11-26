@@ -92,28 +92,28 @@ function Index() {
       <SiteNav />
 
       {/* HERO — uma marca, duas áreas, mantendo a fotografia original */}
-      <section className="relative overflow-hidden px-6 pb-12 pt-24 md:px-12 md:pb-16 md:pt-28">
+      <section className="relative overflow-hidden px-6 pb-10 pt-24 md:px-12 md:pb-10 md:pt-[92px]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 md:min-h-[590px] md:grid-cols-[1.15fr_0.85fr] md:gap-9">
-          <div className="relative z-10 py-2 md:py-12">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-7 md:min-h-[560px] md:grid-cols-[1.15fr_0.85fr] md:gap-9">
+          <div className="relative z-10 py-2 md:py-3">
             <p className="text-[11px] uppercase tracking-[.23em] text-bronze">FORMAÇÃO · EMPREENDEDORISMO · DESENVOLVIMENTO</p>
-            <h1 className="mt-6 max-w-[750px] font-serif text-[clamp(2.9rem,9.3vw,3.8rem)] leading-[1.04] tracking-tight text-foreground md:mt-8 md:text-[clamp(3.1rem,5.6vw,6.1rem)]">
+            <h1 className="mt-5 max-w-[750px] font-serif text-[clamp(2.9rem,9.3vw,3.8rem)] leading-[1.04] tracking-tight text-foreground md:mt-5 md:text-[clamp(3rem,5.4vw,5.6rem)]">
               Pessoas que <span className="italic text-bronze">aprendem.</span><br />
               Ideias que <span className="italic text-bronze">avançam.</span>
             </h1>
-            <span className="mt-7 block h-px w-20 bg-bronze md:mt-9"/>
-            <p className="mt-6 max-w-xl text-base leading-7 text-foreground/85 md:mt-8 md:text-lg md:leading-8">
+            <span className="mt-5 block h-px w-20 bg-bronze md:mt-6"/>
+            <p className="mt-5 max-w-xl text-base leading-7 text-foreground/85 md:mt-5 md:text-lg md:leading-8">
               Formação prática, experiência real e ferramentas para desenvolver pessoas, equipas e projetos.
             </p>
-            <div className="mt-9 max-w-2xl border-t border-bronze/45 md:mt-10">
-              <a href="#areas" className="group flex items-start justify-between gap-5 border-b border-bronze/35 py-5 transition-colors hover:border-bronze md:py-6">
+            <div className="mt-6 max-w-2xl border-t border-bronze/45 md:mt-6">
+              <a href="#areas" className="group flex items-start justify-between gap-5 border-b border-bronze/35 py-4 transition-colors hover:border-bronze md:py-4">
                 <span className="block">
                   <span className="block font-serif text-[clamp(1.55rem,2.3vw,2.1rem)] leading-tight text-foreground transition-colors group-hover:text-bronze">Formação para Organizações</span>
                   <span className="mt-2 block text-sm leading-6 text-muted-foreground">Vendas, comunicação, liderança, empreendedorismo e IA.</span>
                 </span>
                 <span aria-hidden="true" className="pt-1 text-2xl text-bronze transition-transform group-hover:translate-x-1">↗</span>
               </a>
-              <a href="/empreendedorismo" className="group flex items-start justify-between gap-5 border-b border-bronze/35 py-5 transition-colors hover:border-bronze md:py-6">
+              <a href="/empreendedorismo" className="group flex items-start justify-between gap-5 border-b border-bronze/35 py-4 transition-colors hover:border-bronze md:py-4">
                 <span className="block">
                   <span className="block font-serif text-[clamp(1.55rem,2.3vw,2.1rem)] leading-tight text-foreground transition-colors group-hover:text-bronze">Empreendedorismo &amp; Projetos</span>
                   <span className="mt-2 block text-sm leading-6 text-muted-foreground">Descobrir oportunidades, desenvolver ideias e criar algo próprio.</span>
@@ -122,7 +122,7 @@ function Index() {
               </a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[290px] bg-[#071525] p-5 md:ml-auto md:mr-6 md:max-w-[460px] md:p-9" aria-label="Fotografia profissional de João Vaz">
+          <div className="relative mx-auto w-full max-w-[290px] bg-[#071525] p-5 md:ml-auto md:mr-6 md:max-w-[410px] md:p-7" aria-label="Fotografia profissional de João Vaz">
             <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial e empreendedorismo" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
           </div>
         </div>
