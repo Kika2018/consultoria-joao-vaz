@@ -384,7 +384,7 @@ function Index() {
               <div className="space-y-3 md:space-y-2">
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial md:py-3" text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
+                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground md:py-3"
                 >
                   AGENDAR REUNIÃO
                   <span className="transition-transform group-hover:translate-x-1">
