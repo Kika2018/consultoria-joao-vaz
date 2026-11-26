@@ -5,17 +5,17 @@ import { SectionLabel } from "@/components/SectionLabel";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "João Vaz — Formação Corporativa & Desenvolvimento Comercial" },
+      { title: "João Vaz — Formação Corporativa e Empreendedorismo" },
       {
         name: "description",
         content:
-          "João Vaz — Formação corporativa, desenvolvimento comercial e comunicação com impacto. Pessoas que aprendem. Organizações que crescem.",
+          "João Vaz — Formação prática para empresas e para pessoas que querem explorar oportunidades e desenvolver projetos.",
       },
-      { property: "og:title", content: "João Vaz — Formação Corporativa" },
+      { property: "og:title", content: "João Vaz — Empresas e Empreendedorismo" },
       {
         property: "og:description",
         content:
-          "Pessoas que aprendem. Organizações que crescem. Formação corporativa e desenvolvimento comercial.",
+          "Pessoas que aprendem. Ideias que avançam. Formação corporativa, desenvolvimento comercial e empreendedorismo.",
       },
     ],
     links: [
@@ -91,53 +91,33 @@ function Index() {
     <div id="top" className="min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      {/* HERO — fotografia profissional original */}
-      <section className="relative overflow-hidden px-6 pt-7 md:px-12 md:pt-20">
+      {/* HERO — uma marca, duas áreas, mantendo a fotografia original */}
+      <section className="relative overflow-hidden px-6 pb-12 pt-28 md:px-12 md:pb-20 md:pt-36">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
-        <div className="relative mx-auto grid max-w-7xl items-center gap-6 md:min-h-[590px] md:grid-cols-[1.1fr_0.9fr] md:gap-12">
-          <div className="relative z-10 py-5 md:py-14">
-            <p className="text-xs uppercase tracking-[.23em] text-bronze">PESSOAS PRIMEIRO · APLICAÇÃO IMEDIATA</p>
-            <h1 className="mt-5 max-w-[750px] font-serif text-[clamp(2.35rem,8.5vw,3.6rem)] leading-[1.05] tracking-tight text-foreground md:mt-7 md:text-[clamp(2.8rem,5.7vw,6.2rem)]">
-              Formação <span className="italic text-bronze">Corporativa.</span><br />
-              Desenvolvimento <span className="italic text-bronze">Comercial.</span>
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 md:min-h-[590px] md:grid-cols-[1.1fr_0.9fr] md:gap-12">
+          <div className="relative z-10 py-2 md:py-12">
+            <p className="text-[11px] uppercase tracking-[.23em] text-bronze">FORMAÇÃO · EMPREENDEDORISMO · DESENVOLVIMENTO</p>
+            <h1 className="mt-6 max-w-[750px] font-serif text-[clamp(2.9rem,9.3vw,3.8rem)] leading-[1.04] tracking-tight text-foreground md:mt-8 md:text-[clamp(3.1rem,5.6vw,6.1rem)]">
+              Pessoas que <span className="italic text-bronze">aprendem.</span><br />
+              Ideias que <span className="italic text-bronze">avançam.</span>
             </h1>
-            <span className="mt-6 block h-px w-20 bg-bronze md:mt-8"/>
-            <p className="mt-6 max-w-xl font-serif text-[clamp(1.25rem,4.7vw,1.55rem)] italic leading-snug text-foreground/90 md:mt-8 md:text-[clamp(1.35rem,2.3vw,2.15rem)]">
-              Pessoas que aprendem.<br />Organizações que crescem.
+            <span className="mt-7 block h-px w-20 bg-bronze md:mt-9"/>
+            <p className="mt-6 max-w-xl text-base leading-7 text-foreground/85 md:mt-8 md:text-lg md:leading-8">
+              Formação prática para empresas e para pessoas que querem descobrir oportunidades, desenvolver ideias e passar à ação.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3 md:mt-9 md:gap-4">
-              <a href="#areas" className="inline-flex min-h-12 items-center border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background transition-colors hover:bg-bronze/90">
-                CONHECER O MEU TRABALHO →
+            <div className="mt-9 grid max-w-xl gap-4 sm:grid-cols-2 md:mt-10">
+              <a href="#areas" className="group flex min-h-28 flex-col justify-between border border-bronze bg-bronze p-5 text-background transition-colors hover:bg-bronze/90">
+                <span className="text-[11px] font-semibold uppercase tracking-[.17em]">01 · Empresas</span>
+                <span className="flex items-end justify-between gap-2 text-sm font-medium leading-5">Formação corporativa e desenvolvimento comercial <span aria-hidden="true">→</span></span>
               </a>
-              <a href="#contacto" className="inline-flex min-h-12 items-center border border-bronze px-6 text-xs tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">
-                ENTRAR EM CONTACTO →
+              <a href="/empreendedorismo" className="group flex min-h-28 flex-col justify-between border border-bronze p-5 text-foreground transition-colors hover:bg-bronze hover:text-background">
+                <span className="text-[11px] font-semibold uppercase tracking-[.17em]">02 · Empreendedorismo</span>
+                <span className="flex items-end justify-between gap-2 text-sm font-medium leading-5">Descobrir oportunidades e desenvolver projetos <span aria-hidden="true">→</span></span>
               </a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[350px] bg-[#071525] p-6 md:ml-auto md:mr-6 md:max-w-[460px] md:p-9" aria-label="Fotografia profissional de João Vaz">
-            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
-          </div>
-        </div>
-      </section>
-
-      {/* DOIS CAMINHOS — empresas e mentoria */}
-      <section id="empresas" className="relative bg-ink px-6 py-14 md:px-12 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-[.23em] text-bronze">DOIS CAMINHOS. UM PROPÓSITO.</p>
-          <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-tight text-foreground md:text-6xl">Desenvolver pessoas.<br/><em className="text-bronze">Transformar ideias em ação.</em></h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-7">
-            <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
-              <p className="text-[11px] tracking-[.23em] text-bronze">01 / EMPRESAS</p>
-              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Formação Corporativa<br/> & Desenvolvimento Comercial</h3>
-              <p className="mt-6 flex-1 leading-7 text-muted-foreground">Formação, comunicação, negociação, competências comerciais e aprendizagem com aplicação prática no contexto das organizações.</p>
-              <a href="#areas" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background">EXPLORAR SOLUÇÕES →</a>
-            </article>
-            <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
-              <p className="text-[11px] tracking-[.23em] text-bronze">02 / EMPREENDEDORISMO</p>
-              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Empreendedorismo</h3>
-              <p className="mt-6 flex-1 leading-7 text-muted-foreground">Empreendedorismo, descoberta de oportunidades e apoio para transformar ideias em ações. Para quem já tem uma ideia e para quem quer descobrir por onde começar.</p>
-              <a href="/empreendedorismo" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze px-6 text-xs font-semibold tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">EXPLORAR EMPREENDEDORISMO →</a>
-            </article>
+          <div className="relative mx-auto w-full max-w-[290px] bg-[#071525] p-5 md:ml-auto md:mr-6 md:max-w-[460px] md:p-9" aria-label="Fotografia profissional de João Vaz">
+            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial e empreendedorismo" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
           </div>
         </div>
       </section>
