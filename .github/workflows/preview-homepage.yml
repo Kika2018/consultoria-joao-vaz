@@ -1,0 +1,26 @@
+name: Pré-visualização da homepage
+
+on:
+  push:
+    branches:
+      - preview/homepage-duas-areas
+  workflow_dispatch:
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+      - name: Construir site
+        run: bun run build
+      - name: Publicar revisão isolada
+        run: bunx wrangler deploy --name joaovaz-home-preview
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
