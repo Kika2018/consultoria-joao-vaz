@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#empresas", label: "Empresas" },
+  { href: "/#areas", label: "Empresas" },
   { href: "/empreendedorismo", label: "Particulares" },
   { href: "/ebook", label: "eBook" },
   { href: "/#sobre", label: "Sobre" },
