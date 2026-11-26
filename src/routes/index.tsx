@@ -92,9 +92,9 @@ function Index() {
       <SiteNav />
 
       {/* HERO — uma marca, duas áreas, mantendo a fotografia original */}
-      <section className="relative overflow-hidden px-6 pb-12 pt-28 md:px-12 md:pb-20 md:pt-36">
+      <section className="relative overflow-hidden px-6 pb-12 pt-24 md:px-12 md:pb-16 md:pt-28">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
-        <div className="relative mx-auto grid max-w-7xl items-center gap-8 md:min-h-[590px] md:grid-cols-[1.1fr_0.9fr] md:gap-12">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 md:min-h-[590px] md:grid-cols-[1.15fr_0.85fr] md:gap-9">
           <div className="relative z-10 py-2 md:py-12">
             <p className="text-[11px] uppercase tracking-[.23em] text-bronze">FORMAÇÃO · EMPREENDEDORISMO · DESENVOLVIMENTO</p>
             <h1 className="mt-6 max-w-[750px] font-serif text-[clamp(2.9rem,9.3vw,3.8rem)] leading-[1.04] tracking-tight text-foreground md:mt-8 md:text-[clamp(3.1rem,5.6vw,6.1rem)]">
@@ -103,16 +103,18 @@ function Index() {
             </h1>
             <span className="mt-7 block h-px w-20 bg-bronze md:mt-9"/>
             <p className="mt-6 max-w-xl text-base leading-7 text-foreground/85 md:mt-8 md:text-lg md:leading-8">
-              Formação prática para empresas e para pessoas que querem descobrir oportunidades, desenvolver ideias e passar à ação.
+              Formação prática, experiência real e ferramentas para desenvolver pessoas, equipas e projetos.
             </p>
-            <div className="mt-9 grid max-w-xl gap-4 sm:grid-cols-2 md:mt-10">
-              <a href="#areas" className="group flex min-h-28 flex-col justify-between border border-bronze bg-bronze p-5 text-background transition-colors hover:bg-bronze/90">
-                <span className="text-[11px] font-semibold uppercase tracking-[.17em]">01 · Empresas</span>
-                <span className="flex items-end justify-between gap-2 text-sm font-medium leading-5">Formação corporativa e desenvolvimento comercial <span aria-hidden="true">→</span></span>
+            <div className="mt-8 grid max-w-[740px] gap-4 sm:grid-cols-2 md:mt-9">
+              <a href="#areas" className="group flex min-h-44 flex-col justify-between border-2 border-bronze bg-bronze p-6 text-background shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:bg-bronze/90 md:min-h-48">
+                <span className="text-xs font-bold uppercase tracking-[.13em]">01 · Empresas</span>
+                <span className="mt-2 text-xs leading-5 text-background/80">Vendas · Comunicação · Liderança · Empreendedorismo · IA</span>
+                <span className="flex items-end justify-between gap-3 text-lg font-semibold leading-6">Desenvolver equipas e organizações <span aria-hidden="true">→</span></span>
               </a>
-              <a href="/empreendedorismo" className="group flex min-h-28 flex-col justify-between border border-bronze p-5 text-foreground transition-colors hover:bg-bronze hover:text-background">
-                <span className="text-[11px] font-semibold uppercase tracking-[.17em]">02 · Empreendedorismo</span>
-                <span className="flex items-end justify-between gap-2 text-sm font-medium leading-5">Descobrir oportunidades e desenvolver projetos <span aria-hidden="true">→</span></span>
+              <a href="/empreendedorismo" className="group flex min-h-44 flex-col justify-between border-2 border-bronze bg-[#102339]/80 p-6 text-foreground shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:bg-bronze hover:text-background md:min-h-48">
+                <span className="text-xs font-bold uppercase tracking-[.13em]">02 · Particulares</span>
+                <span className="mt-2 text-xs leading-5 text-foreground/70 group-hover:text-background/80">Empreendedorismo · Competências · IA · Mentoria</span>
+                <span className="flex items-end justify-between gap-3 text-lg font-semibold leading-6">Descobrir oportunidades e criar projetos <span aria-hidden="true">→</span></span>
               </a>
             </div>
           </div>
