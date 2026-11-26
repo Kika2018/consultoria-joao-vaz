@@ -105,16 +105,20 @@ function Index() {
             <p className="mt-6 max-w-xl text-base leading-7 text-foreground/85 md:mt-8 md:text-lg md:leading-8">
               Formação prática, experiência real e ferramentas para desenvolver pessoas, equipas e projetos.
             </p>
-            <div className="mt-8 grid max-w-[740px] gap-4 sm:grid-cols-2 md:mt-9">
-              <a href="#areas" className="group flex min-h-44 flex-col justify-between border-2 border-bronze bg-bronze p-6 text-background shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:bg-bronze/90 md:min-h-48">
-                <span className="text-xs font-bold uppercase tracking-[.13em]">01 · Empresas</span>
-                <span className="mt-2 text-xs leading-5 text-background/80">Vendas · Comunicação · Liderança · Empreendedorismo · IA</span>
-                <span className="flex items-end justify-between gap-3 text-lg font-semibold leading-6">Desenvolver equipas e organizações <span aria-hidden="true">→</span></span>
+            <div className="mt-9 max-w-2xl border-t border-bronze/45 md:mt-10">
+              <a href="#areas" className="group flex items-start justify-between gap-5 border-b border-bronze/35 py-5 transition-colors hover:border-bronze md:py-6">
+                <span className="block">
+                  <span className="block font-serif text-[clamp(1.55rem,2.3vw,2.1rem)] leading-tight text-foreground transition-colors group-hover:text-bronze">Formação para Organizações</span>
+                  <span className="mt-2 block text-sm leading-6 text-muted-foreground">Vendas, comunicação, liderança, empreendedorismo e IA.</span>
+                </span>
+                <span aria-hidden="true" className="pt-1 text-2xl text-bronze transition-transform group-hover:translate-x-1">↗</span>
               </a>
-              <a href="/empreendedorismo" className="group flex min-h-44 flex-col justify-between border-2 border-bronze bg-[#102339]/80 p-6 text-foreground shadow-lg shadow-black/20 transition-all hover:-translate-y-1 hover:bg-bronze hover:text-background md:min-h-48">
-                <span className="text-xs font-bold uppercase tracking-[.13em]">02 · Particulares</span>
-                <span className="mt-2 text-xs leading-5 text-foreground/70 group-hover:text-background/80">Empreendedorismo · Competências · IA · Mentoria</span>
-                <span className="flex items-end justify-between gap-3 text-lg font-semibold leading-6">Descobrir oportunidades e criar projetos <span aria-hidden="true">→</span></span>
+              <a href="/empreendedorismo" className="group flex items-start justify-between gap-5 border-b border-bronze/35 py-5 transition-colors hover:border-bronze md:py-6">
+                <span className="block">
+                  <span className="block font-serif text-[clamp(1.55rem,2.3vw,2.1rem)] leading-tight text-foreground transition-colors group-hover:text-bronze">Empreendedorismo &amp; Projetos</span>
+                  <span className="mt-2 block text-sm leading-6 text-muted-foreground">Descobrir oportunidades, desenvolver ideias e criar algo próprio.</span>
+                </span>
+                <span aria-hidden="true" className="pt-1 text-2xl text-bronze transition-transform group-hover:translate-x-1">↗</span>
               </a>
             </div>
           </div>
