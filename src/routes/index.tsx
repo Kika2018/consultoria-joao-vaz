@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SectionLabel } from "@/components/SectionLabel";
 
@@ -87,6 +88,7 @@ const principles = [
 ];
 
 function Index() {
+  const [motivoContacto, setMotivoContacto] = useState("");
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
       <SiteNav />
@@ -361,38 +363,57 @@ function Index() {
                 const data = new FormData(e.currentTarget);
                 const nome = String(data.get("nome") ?? "");
                 const email = String(data.get("email") ?? "");
+                const motivo = String(data.get("motivo") ?? "");
                 const empresa = String(data.get("empresa") ?? "");
                 const telefone = String(data.get("telefone") ?? "");
                 const mensagem = String(data.get("mensagem") ?? "");
                 const subject = "Pedido de contacto — João Vaz";
-                const body = `Nome: ${nome}\nE-mail: ${email}\nEmpresa: ${empresa}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
+                const body = `Nome: ${nome}\nE-mail: ${email}\nMotivo: ${motivo}\n${empresa ? `Empresa ou organização: ${empresa}\n` : ""}Telefone: ${telefone || "Não indicado"}\nMensagem: ${mensagem}`;
                 window.location.href = `mailto:geral@joaovaz.co?subject=${encodeURIComponent(
                   subject,
                 )}&body=${encodeURIComponent(body)}`;
               }}
               className="space-y-8 md:col-span-6 md:col-start-7 md:space-y-4"
             >
-              <Field name="nome" label="NOME" placeholder="O seu nome" required />
+              <Field name="nome" label="NOME COMPLETO" placeholder="O seu nome completo" required />
               <Field name="email" label="E-MAIL" type="email" placeholder="o.seu@email.pt" required />
-              <Field name="empresa" label="EMPRESA" placeholder="Nome da organização" required />
-              <Field name="telefone" label="TELEFONE (OPCIONAL)" type="tel" placeholder="+351" />
+              <label className="block">
+                <span className="text-[11px] tracking-editorial text-muted-foreground">MOTIVO DO CONTACTO</span>
+                <select
+                  name="motivo"
+                  value={motivoContacto}
+                  onChange={(e) => setMotivoContacto(e.target.value)}
+                  required
+                  className="mt-3 w-full rounded-none border-b border-border bg-background pb-3 font-serif text-lg text-foreground focus:border-bronze focus:outline-none md:mt-1 md:pb-2"
+                >
+                  <option value="" disabled>Selecione uma opção</option>
+                  <option value="Formação para Organizações">Formação para Organizações</option>
+                  <option value="Empreendedorismo & Projetos">Empreendedorismo &amp; Projetos</option>
+                  <option value="Outro assunto">Outro assunto</option>
+                </select>
+              </label>
+              {motivoContacto === "Formação para Organizações" && (
+                <Field name="empresa" label="EMPRESA OU ORGANIZAÇÃO" placeholder="Nome da empresa ou organização" required />
+              )}
+              <Field name="telefone" label="TELEFONE (OPCIONAL)" type="tel" placeholder="+351 — se preferir contacto telefónico" />
               <FieldArea
                 name="mensagem"
-                label="MENSAGEM (OPCIONAL)"
+                label="MENSAGEM"
                 placeholder="Descreva brevemente o que procura…"
+                required
               />
               <div className="space-y-3 md:space-y-2">
                 <button
                   type="submit"
                   className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground md:py-3"
                 >
-                  AGENDAR REUNIÃO
+                  ENVIAR PEDIDO DE CONTACTO
                   <span className="transition-transform group-hover:translate-x-1">
                     →
                   </span>
                 </button>
-                <p className="text-[11px] tracking-editorial text-muted-foreground">
-                  RESPOSTA EM 24–48H ÚTEIS.
+                <p className="text-[11px] leading-5 text-muted-foreground">
+                  Este botão prepara um email no seu dispositivo. Confirme o envio na aplicação de email.
                 </p>
               </div>
             </form>
@@ -444,10 +465,12 @@ function FieldArea({
   label,
   placeholder,
   name,
+  required = false,
 }: {
   label: string;
   placeholder: string;
   name?: string;
+  required?: boolean;
 }) {
   return (
     <label className="block">
@@ -457,6 +480,7 @@ function FieldArea({
       <textarea
         rows={3}
         name={name}
+        required={required}
         placeholder={placeholder}
         className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg md:mt-1 md:h-16 md:pb-2 text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
