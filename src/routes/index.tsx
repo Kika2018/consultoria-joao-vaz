@@ -167,12 +167,12 @@ function Index() {
       </section>
 
       {/* ÁREAS */}
-      <section id="areas" className="px-6 py-20 md:px-12 md:py-24">
+      <section id="areas" className="px-6 py-14 md:px-12 md:py-16">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <SectionLabel>ÁREAS DE EXPERTISE</SectionLabel>
-              <h2 className="mt-8 font-serif text-4xl leading-tight text-foreground md:text-6xl">
+              <h2 className="mt-6 font-serif text-4xl leading-tight text-foreground md:text-6xl">
                 Onde a experiência
                 <br />
                 encontra <span className="italic text-bronze/90">impacto.</span>
@@ -180,11 +180,11 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-12 divide-y divide-border border-y border-border">
+          <div className="mt-8 divide-y divide-border border-y border-border md:mt-9">
             {areas.map((a) => (
               <article
                 key={a.n}
-                className="group grid gap-6 py-10 transition-colors hover:bg-foreground/[0.02] md:grid-cols-12 md:gap-12 md:py-12"
+                className="group grid gap-4 py-7 transition-colors hover:bg-foreground/[0.02] md:grid-cols-12 md:gap-8 md:py-8"
               >
                 <div className="md:col-span-1">
                   <span className="font-serif text-2xl text-bronze">
