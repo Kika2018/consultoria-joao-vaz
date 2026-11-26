@@ -247,12 +247,12 @@ function Index() {
       </section>
 
       {/* FORMAÇÃO & CERTIFICAÇÕES */}
-      <section id="formacao" className="px-6 py-20 md:px-12 md:py-24">
+      <section id="formacao" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[calc(100svh-6rem)] md:flex-col md:justify-center md:px-12 md:py-7">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-16 md:grid-cols-12">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-4">
               <SectionLabel>FORMAÇÃO &amp; CERTIFICAÇÕES</SectionLabel>
-              <h2 className="mt-8 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-6 font-serif text-4xl leading-tight text-foreground md:mt-4 md:text-[2.75rem]">
                 Percurso
                 <br />
                 <span className="italic text-bronze/90">académico.</span>
@@ -263,12 +263,12 @@ function Index() {
                 {credentials.map((c) => (
                   <li
                     key={c.title}
-                    className="grid gap-2 py-7 md:grid-cols-12 md:items-baseline md:gap-10 md:py-8"
+                    className="grid gap-2 py-6 md:grid-cols-12 md:items-baseline md:gap-6 md:py-4"
                   >
                     <p className="text-[11px] tracking-editorial text-bronze md:col-span-4">
                       {c.institution.toUpperCase()}
                     </p>
-                    <p className="font-serif text-xl leading-snug text-foreground md:col-span-8 md:text-2xl">
+                    <p className="font-serif text-xl leading-snug text-foreground md:col-span-8 md:text-[1.4rem] md:leading-snug">
                       {c.title}
                     </p>
                   </li>
