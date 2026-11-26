@@ -167,7 +167,7 @@ function Index() {
       </section>
 
       {/* ÁREAS */}
-      <section id="areas" className="scroll-mt-24 px-6 py-14 md:px-12 md:pb-8 md:pt-8">
+      <section id="areas" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[calc(100svh-6rem)] md:flex-col md:justify-center md:px-12 md:py-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
