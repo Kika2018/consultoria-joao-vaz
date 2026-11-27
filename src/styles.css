@@ -107,3 +107,15 @@
     background-color: var(--ink);
   }
 }
+
+/* Em ecrãs de computador, cada secção curta assenta numa página visual.
+   No telemóvel e para utilizadores com movimento reduzido, o scroll é livre. */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  #top > section {
+    scroll-snap-align: start;
+  }
+}
