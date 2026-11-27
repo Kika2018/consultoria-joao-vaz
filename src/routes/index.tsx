@@ -1,21 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SectionLabel } from "@/components/SectionLabel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "João Vaz — Formação Corporativa & Desenvolvimento Comercial" },
+      { title: "João Vaz — Formação Corporativa e Empreendedorismo" },
       {
         name: "description",
         content:
-          "João Vaz — Formação corporativa, desenvolvimento comercial e comunicação com impacto. Pessoas que aprendem. Organizações que crescem.",
+          "João Vaz — Formação prática para empresas e para pessoas que querem explorar oportunidades e desenvolver projetos.",
       },
-      { property: "og:title", content: "João Vaz — Formação Corporativa" },
+      { property: "og:title", content: "João Vaz — Empresas e Empreendedorismo" },
       {
         property: "og:description",
         content:
-          "Pessoas que aprendem. Organizações que crescem. Formação corporativa e desenvolvimento comercial.",
+          "Pessoas que aprendem. Ideias que avançam. Formação corporativa, desenvolvimento comercial e empreendedorismo.",
       },
     ],
     links: [
@@ -87,57 +88,44 @@ const principles = [
 ];
 
 function Index() {
+  const [motivoContacto, setMotivoContacto] = useState("");
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      {/* HERO — fotografia profissional original */}
-      <section className="relative overflow-hidden px-6 pt-7 md:px-12 md:pt-20">
+      {/* HERO — uma marca, duas áreas, mantendo a fotografia original */}
+      <section className="relative overflow-hidden px-6 pb-8 pt-20 md:px-12 md:pb-10 md:pt-[92px]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-60" style={{background:"radial-gradient(ellipse 55% 75% at 75% 60%, #243a56 0%, transparent 73%)"}}/>
-        <div className="relative mx-auto grid max-w-7xl items-center gap-6 md:min-h-[590px] md:grid-cols-[1.1fr_0.9fr] md:gap-12">
-          <div className="relative z-10 py-5 md:py-14">
-            <p className="text-xs uppercase tracking-[.23em] text-bronze">PESSOAS PRIMEIRO · APLICAÇÃO IMEDIATA</p>
-            <h1 className="mt-5 max-w-[750px] font-serif text-[clamp(2.35rem,8.5vw,3.6rem)] leading-[1.05] tracking-tight text-foreground md:mt-7 md:text-[clamp(2.8rem,5.7vw,6.2rem)]">
-              Formação <span className="italic text-bronze">Corporativa.</span><br />
-              Desenvolvimento <span className="italic text-bronze">Comercial.</span>
+        <div className="relative mx-auto grid max-w-7xl items-center gap-4 md:min-h-[560px] md:grid-cols-[1.15fr_0.85fr] md:gap-9">
+          <div className="relative z-10 py-2 md:py-3">
+            <p className="text-[11px] uppercase tracking-[.23em] text-bronze">FORMAÇÃO · EMPREENDEDORISMO · DESENVOLVIMENTO</p>
+            <h1 className="mt-4 max-w-[750px] font-serif text-[clamp(2.45rem,8vw,3.3rem)] leading-[1.06] tracking-tight text-foreground md:mt-5 md:text-[clamp(3rem,5.4vw,5.6rem)]">
+              Pessoas que <span className="italic text-bronze">aprendem.</span><br />
+              Ideias que <span className="italic text-bronze">avançam.</span>
             </h1>
-            <span className="mt-6 block h-px w-20 bg-bronze md:mt-8"/>
-            <p className="mt-6 max-w-xl font-serif text-[clamp(1.25rem,4.7vw,1.55rem)] italic leading-snug text-foreground/90 md:mt-8 md:text-[clamp(1.35rem,2.3vw,2.15rem)]">
-              Pessoas que aprendem.<br />Organizações que crescem.
+            <span className="mt-4 block h-px w-20 bg-bronze md:mt-6"/>
+            <p className="mt-4 max-w-xl text-base leading-7 text-foreground/85 md:mt-5 md:text-lg md:leading-8">
+              Formação prática, experiência real e ferramentas para desenvolver pessoas, equipas e projetos.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3 md:mt-9 md:gap-4">
-              <a href="#areas" className="inline-flex min-h-12 items-center border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background transition-colors hover:bg-bronze/90">
-                CONHECER O MEU TRABALHO →
+            <div className="mt-5 max-w-2xl border-t border-bronze/45 md:mt-6">
+              <a href="#areas" className="group flex items-start justify-between gap-4 border-b border-bronze/35 py-3.5 transition-colors hover:border-bronze md:py-4">
+                <span className="block">
+                  <span className="block font-serif text-[clamp(1.55rem,2.3vw,2.1rem)] leading-tight text-foreground transition-colors group-hover:text-bronze">Formação para Organizações</span>
+                  <span className="mt-1.5 block text-sm leading-6 text-muted-foreground">Vendas, comunicação, liderança, empreendedorismo e IA.</span>
+                </span>
+                <span aria-hidden="true" className="pt-1 text-2xl text-bronze transition-transform group-hover:translate-x-1">↗</span>
               </a>
-              <a href="#contacto" className="inline-flex min-h-12 items-center border border-bronze px-6 text-xs tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">
-                ENTRAR EM CONTACTO →
+              <a href="/empreendedorismo" className="group flex items-start justify-between gap-4 border-b border-bronze/35 py-3.5 transition-colors hover:border-bronze md:py-4">
+                <span className="block">
+                  <span className="block font-serif text-[clamp(1.55rem,2.3vw,2.1rem)] leading-tight text-foreground transition-colors group-hover:text-bronze">Empreendedorismo &amp; Projetos</span>
+                  <span className="mt-1.5 block text-sm leading-6 text-muted-foreground">Descobrir oportunidades, desenvolver ideias e criar algo próprio.</span>
+                </span>
+                <span aria-hidden="true" className="pt-1 text-2xl text-bronze transition-transform group-hover:translate-x-1">↗</span>
               </a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-[350px] bg-[#071525] p-6 md:ml-auto md:mr-6 md:max-w-[460px] md:p-9" aria-label="Fotografia profissional de João Vaz">
-            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
-          </div>
-        </div>
-      </section>
-
-      {/* DOIS CAMINHOS — empresas e mentoria */}
-      <section id="empresas" className="relative bg-ink px-6 py-14 md:px-12 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs uppercase tracking-[.23em] text-bronze">DOIS CAMINHOS. UM PROPÓSITO.</p>
-          <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-tight text-foreground md:text-6xl">Desenvolver pessoas.<br/><em className="text-bronze">Transformar ideias em ação.</em></h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 md:gap-7">
-            <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
-              <p className="text-[11px] tracking-[.23em] text-bronze">01 / EMPRESAS</p>
-              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Formação Corporativa<br/> & Desenvolvimento Comercial</h3>
-              <p className="mt-6 flex-1 leading-7 text-muted-foreground">Formação, comunicação, negociação, competências comerciais e aprendizagem com aplicação prática no contexto das organizações.</p>
-              <a href="#areas" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze bg-bronze px-6 text-xs font-semibold tracking-wider text-background">EXPLORAR SOLUÇÕES →</a>
-            </article>
-            <article className="flex flex-col border border-bronze/40 bg-background/60 p-8 md:p-11">
-              <p className="text-[11px] tracking-[.23em] text-bronze">02 / EMPREENDEDORISMO</p>
-              <h3 className="mt-6 font-serif text-3xl text-foreground md:text-4xl">Empreendedorismo</h3>
-              <p className="mt-6 flex-1 leading-7 text-muted-foreground">Empreendedorismo, descoberta de oportunidades e apoio para transformar ideias em ações. Para quem já tem uma ideia e para quem quer descobrir por onde começar.</p>
-              <a href="/empreendedorismo" className="mt-9 inline-flex min-h-12 items-center self-start border border-bronze px-6 text-xs font-semibold tracking-wider text-foreground transition-colors hover:bg-bronze hover:text-background">EXPLORAR EMPREENDEDORISMO →</a>
-            </article>
+          <div className="relative mx-auto hidden w-full bg-[#071525] md:ml-auto md:mr-6 md:block md:max-w-[410px] md:p-7" aria-label="Fotografia profissional de João Vaz">
+            <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial e empreendedorismo" width="420" height="525" fetchPriority="high" className="block h-auto w-full object-contain"/>
           </div>
         </div>
       </section>
@@ -154,6 +142,9 @@ function Index() {
               <br />
               <span className="italic text-bronze/90">no terreno.</span>
             </h2>
+            <div className="mx-auto mt-8 w-full max-w-[290px] bg-[#071525] p-5 md:hidden" aria-label="Fotografia profissional de João Vaz">
+              <img src="/joao-vaz-retrato.svg" alt="João Vaz, formador em desenvolvimento comercial e empreendedorismo" width="420" height="525" loading="lazy" className="block h-auto w-full object-contain"/>
+            </div>
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:col-start-6 md:text-lg">
             <p>
@@ -181,12 +172,12 @@ function Index() {
       </section>
 
       {/* ÁREAS */}
-      <section id="areas" className="px-6 py-20 md:px-12 md:py-24">
+      <section id="areas" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[calc(100svh-6rem)] md:flex-col md:justify-center md:px-12 md:py-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="grid gap-8 md:grid-cols-12 md:items-end">
             <div className="md:col-span-7">
               <SectionLabel>ÁREAS DE EXPERTISE</SectionLabel>
-              <h2 className="mt-8 font-serif text-4xl leading-tight text-foreground md:text-6xl">
+              <h2 className="mt-5 font-serif text-4xl leading-tight text-foreground md:mt-3 md:text-5xl md:leading-[1.05]">
                 Onde a experiência
                 <br />
                 encontra <span className="italic text-bronze/90">impacto.</span>
@@ -194,11 +185,11 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-12 divide-y divide-border border-y border-border">
+          <div className="mt-8 divide-y divide-border border-y border-border md:mt-5">
             {areas.map((a) => (
               <article
                 key={a.n}
-                className="group grid gap-6 py-10 transition-colors hover:bg-foreground/[0.02] md:grid-cols-12 md:gap-12 md:py-12"
+                className="group grid gap-4 py-7 transition-colors hover:bg-foreground/[0.02] md:grid-cols-12 md:items-start md:gap-6 md:py-3.5"
               >
                 <div className="md:col-span-1">
                   <span className="font-serif text-2xl text-bronze">
@@ -206,12 +197,12 @@ function Index() {
                   </span>
                 </div>
                 <div className="md:col-span-4">
-                  <h3 className="font-serif text-2xl text-foreground md:text-3xl">
+                  <h3 className="font-serif text-2xl text-foreground md:text-[1.65rem] md:leading-tight">
                     {a.title}
                   </h3>
                 </div>
                 <div className="md:col-span-7">
-                  <p className="max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                  <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-base md:leading-6">
                     {a.body}
                   </p>
                 </div>
@@ -261,12 +252,12 @@ function Index() {
       </section>
 
       {/* FORMAÇÃO & CERTIFICAÇÕES */}
-      <section id="formacao" className="px-6 py-20 md:px-12 md:py-24">
+      <section id="formacao" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-7">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-16 md:grid-cols-12">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-4">
               <SectionLabel>FORMAÇÃO &amp; CERTIFICAÇÕES</SectionLabel>
-              <h2 className="mt-8 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-6 font-serif text-4xl leading-tight text-foreground md:mt-4 md:text-[2.75rem]">
                 Percurso
                 <br />
                 <span className="italic text-bronze/90">académico.</span>
@@ -277,12 +268,12 @@ function Index() {
                 {credentials.map((c) => (
                   <li
                     key={c.title}
-                    className="grid gap-2 py-7 md:grid-cols-12 md:items-baseline md:gap-10 md:py-8"
+                    className="grid gap-2 py-6 md:grid-cols-12 md:items-baseline md:gap-6 md:py-4"
                   >
                     <p className="text-[11px] tracking-editorial text-bronze md:col-span-4">
                       {c.institution.toUpperCase()}
                     </p>
-                    <p className="font-serif text-xl leading-snug text-foreground md:col-span-8 md:text-2xl">
+                    <p className="font-serif text-xl leading-snug text-foreground md:col-span-8 md:text-[1.4rem] md:leading-snug">
                       {c.title}
                     </p>
                   </li>
@@ -328,22 +319,22 @@ function Index() {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="px-6 py-20 md:px-12 md:py-24">
+      <section id="contacto" className="scroll-mt-24 px-6 py-16 md:flex md:min-h-[calc(100svh-6rem)] md:flex-col md:justify-center md:px-12 md:py-6">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-16 md:grid-cols-12">
+          <div className="grid gap-12 md:grid-cols-12 md:items-center md:gap-10">
             <div className="md:col-span-5">
               <SectionLabel>CONTACTO</SectionLabel>
-              <h2 className="mt-8 font-serif text-5xl leading-tight text-foreground md:text-7xl">
+              <h2 className="mt-6 font-serif text-5xl leading-tight text-foreground md:mt-4 md:text-6xl">
                 Vamos
                 <br />
                 <span className="italic text-bronze/90">conversar.</span>
               </h2>
-              <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:mt-5 md:text-base md:leading-7">
                 Cada projecto começa por uma conversa. A conversa começa com
                 contexto, não com fórmulas pré-definidas.
               </p>
 
-              <div className="mt-14 space-y-8">
+              <div className="mt-10 space-y-7 md:mt-7 md:space-y-5">
                 <div>
                   <p className="text-[11px] tracking-editorial text-bronze">
                     E-MAIL
@@ -372,38 +363,57 @@ function Index() {
                 const data = new FormData(e.currentTarget);
                 const nome = String(data.get("nome") ?? "");
                 const email = String(data.get("email") ?? "");
+                const motivo = String(data.get("motivo") ?? "");
                 const empresa = String(data.get("empresa") ?? "");
                 const telefone = String(data.get("telefone") ?? "");
                 const mensagem = String(data.get("mensagem") ?? "");
                 const subject = "Pedido de contacto — João Vaz";
-                const body = `Nome: ${nome}\nE-mail: ${email}\nEmpresa: ${empresa}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
+                const body = `Nome: ${nome}\nE-mail: ${email}\nMotivo: ${motivo}\n${empresa ? `Empresa ou organização: ${empresa}\n` : ""}Telefone: ${telefone || "Não indicado"}\nMensagem: ${mensagem}`;
                 window.location.href = `mailto:geral@joaovaz.co?subject=${encodeURIComponent(
                   subject,
                 )}&body=${encodeURIComponent(body)}`;
               }}
-              className="space-y-8 md:col-span-6 md:col-start-7"
+              className="space-y-8 md:col-span-6 md:col-start-7 md:space-y-4"
             >
-              <Field name="nome" label="NOME" placeholder="O seu nome" required />
+              <Field name="nome" label="NOME COMPLETO" placeholder="O seu nome completo" required />
               <Field name="email" label="E-MAIL" type="email" placeholder="o.seu@email.pt" required />
-              <Field name="empresa" label="EMPRESA" placeholder="Nome da organização" required />
-              <Field name="telefone" label="TELEFONE (OPCIONAL)" type="tel" placeholder="+351" />
+              <label className="block">
+                <span className="text-[11px] tracking-editorial text-muted-foreground">MOTIVO DO CONTACTO</span>
+                <select
+                  name="motivo"
+                  value={motivoContacto}
+                  onChange={(e) => setMotivoContacto(e.target.value)}
+                  required
+                  className="mt-3 w-full rounded-none border-b border-border bg-background pb-3 font-serif text-lg text-foreground focus:border-bronze focus:outline-none md:mt-1 md:pb-2"
+                >
+                  <option value="" disabled>Selecione uma opção</option>
+                  <option value="Formação para Organizações">Formação para Organizações</option>
+                  <option value="Empreendedorismo & Projetos">Empreendedorismo &amp; Projetos</option>
+                  <option value="Outro assunto">Outro assunto</option>
+                </select>
+              </label>
+              {motivoContacto === "Formação para Organizações" && (
+                <Field name="empresa" label="EMPRESA OU ORGANIZAÇÃO" placeholder="Nome da empresa ou organização" required />
+              )}
+              <Field name="telefone" label="TELEFONE (OPCIONAL)" type="tel" placeholder="+351 — se preferir contacto telefónico" />
               <FieldArea
                 name="mensagem"
-                label="MENSAGEM (OPCIONAL)"
+                label="MENSAGEM"
                 placeholder="Descreva brevemente o que procura…"
+                required
               />
-              <div className="space-y-3">
+              <div className="space-y-3 md:space-y-2">
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground"
+                  className="group inline-flex items-center gap-3 border border-bronze px-8 py-4 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-primary-foreground md:py-3"
                 >
-                  AGENDAR REUNIÃO
+                  ENVIAR PEDIDO DE CONTACTO
                   <span className="transition-transform group-hover:translate-x-1">
                     →
                   </span>
                 </button>
-                <p className="text-[11px] tracking-editorial text-muted-foreground">
-                  RESPOSTA EM 24–48H ÚTEIS.
+                <p className="text-[11px] leading-5 text-muted-foreground">
+                  Este botão prepara um email no seu dispositivo. Confirme o envio na aplicação de email.
                 </p>
               </div>
             </form>
@@ -445,7 +455,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
+        className="mt-3 w-full border-b border-border bg-transparent pb-3 font-serif text-lg md:mt-1 md:pb-2 text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
     </label>
   );
@@ -455,10 +465,12 @@ function FieldArea({
   label,
   placeholder,
   name,
+  required = false,
 }: {
   label: string;
   placeholder: string;
   name?: string;
+  required?: boolean;
 }) {
   return (
     <label className="block">
@@ -466,10 +478,11 @@ function FieldArea({
         {label}
       </span>
       <textarea
-        rows={4}
+        rows={3}
         name={name}
+        required={required}
         placeholder={placeholder}
-        className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
+        className="mt-3 w-full resize-none border-b border-border bg-transparent pb-3 font-serif text-lg md:mt-1 md:h-16 md:pb-2 text-foreground placeholder:text-muted-foreground/50 focus:border-bronze focus:outline-none"
       />
     </label>
   );
