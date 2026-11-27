@@ -7,9 +7,9 @@ export const Route = createFileRoute("/ebook")({
   head: () => ({
     meta: [
       { title: "Da Ideia à Ação — eBook gratuito | João Vaz" },
-      { name: "description", content: "Um guia prático e gratuito de João Vaz sobre decisões, comunicação, empatia, pensamento empreendedor e inteligência artificial aplicada." },
+      { name: "description", content: "Partilho um guia gratuito de reflexões e exercícios sobre comunicação, empatia, pensamento empreendedor e IA prática." },
       { property: "og:title", content: "Da Ideia à Ação — João Vaz" },
-      { property: "og:description", content: "Pensar melhor, compreender pessoas e transformar conhecimento em resultados. eBook gratuito com exercícios práticos." },
+      { property: "og:description", content: "Escrevi um guia de reflexão e exercícios sobre pensamento empreendedor, comunicação e IA." },
       { property: "og:type", content: "book" },
       { property: "og:url", content: "https://joaovaz.co/ebook" },
     ],
@@ -28,8 +28,8 @@ function EbookPage() {
             <div>
               <p className="mb-3 text-[11px] tracking-[0.25em] text-bronze">EBOOK GRATUITO · JOÃO VAZ</p>
               <h1 className="font-serif text-5xl leading-[1.02] tracking-tight md:text-7xl">Da Ideia<br /><em className="text-bronze">à Ação.</em></h1>
-              <p className="mt-5 max-w-xl font-serif text-xl leading-snug md:text-2xl">Pensar melhor, compreender pessoas e transformar conhecimento em resultados.</p>
-              <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground md:text-base">Um guia com reflexões, experiências profissionais e exercícios para quem quer passar das boas ideias à aplicação prática — no trabalho, nas equipas e nos projetos.</p>
+              <p className="mt-5 max-w-xl font-serif text-xl leading-snug md:text-2xl">Pensar melhor, compreender pessoas e passar à prática.</p>
+              <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground md:text-base">Escrevi este guia para partilhar reflexões, experiências e exercícios que podes explorar ao teu ritmo, no trabalho ou nos teus projetos.</p>
               <div className="mt-6 flex flex-wrap items-center gap-5">
                 <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center border border-bronze bg-bronze px-7 text-xs font-semibold tracking-wider text-background transition-opacity hover:opacity-90">LER O EBOOK GRATUITAMENTE ↗</a>
                 <span className="text-sm text-muted-foreground">40 páginas · Acesso gratuito</span>
@@ -43,7 +43,7 @@ function EbookPage() {
                 <div className="flex flex-1 flex-col justify-center">
                   <span className="font-serif text-6xl leading-[.99] text-[#F5F0EB] md:text-7xl">Da Ideia<br/>à Ação</span>
                 </div>
-                <p className="text-[13px] leading-5 text-[#F5F0EB]">Pensar melhor, compreender pessoas e transformar conhecimento em resultados.</p>
+                <p className="text-[13px] leading-5 text-[#F5F0EB]">Pensar melhor, compreender pessoas e passar à prática.</p>
                 <span className="mt-9 h-px w-12 bg-[#A8874A]"/>
                 <p className="mt-5 text-[10px] tracking-[0.1em] text-[#A8874A]">PESSOAS PRIMEIRO · APLICAÇÃO IMEDIATA</p>
               </div>
@@ -56,9 +56,9 @@ function EbookPage() {
             <h2 className="mt-6 max-w-3xl font-serif text-4xl leading-tight md:text-6xl">Conhecimento que se transforma em <em className="text-bronze">ação.</em></h2>
             <div className="mt-14 grid gap-8 md:grid-cols-3">
               {[
-                ["01","Pensar antes de agir","Fazer melhores perguntas, reduzir incerteza e tomar decisões com critério."],
-                ["02","Ouvir e comunicar","Empatia, confiança e relações profissionais mais relevantes."],
-                ["03","Executar com propósito","Pensamento empreendedor, IA aplicada e um plano de ação de 30 dias."],
+                ["01","Pensar antes de agir","Partilho perguntas e exercícios para pensares antes de decidir."],
+                ["02","Ouvir e comunicar","Exploro a empatia, a escuta e a comunicação em situações do dia a dia."],
+                ["03","Executar com propósito","Proponho exercícios de pensamento empreendedor e utilização prática de IA."],
               ].map(([n,title,body]) => (
                 <article key={n} className="border-t border-bronze/50 pt-6">
                   <span className="font-serif text-2xl text-bronze">{n}</span>
@@ -74,7 +74,7 @@ function EbookPage() {
             <div>
               <p className="text-[11px] tracking-[0.2em] text-bronze">DA LEITURA À PRÁTICA</p>
               <h2 className="mt-4 font-serif text-3xl md:text-5xl">O próximo passo é teu.</h2>
-              <p className="mt-4 max-w-xl text-muted-foreground">Lê ao teu ritmo e experimenta os exercícios no teu contexto profissional.</p>
+              <p className="mt-4 max-w-xl text-muted-foreground">Podes ler ao teu ritmo e experimentar os exercícios no teu próprio contexto.</p>
             </div>
             <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 shrink-0 items-center border border-bronze px-7 text-xs tracking-wider transition-colors hover:bg-bronze hover:text-background">ABRIR O EBOOK ↗</a>
           </div>
