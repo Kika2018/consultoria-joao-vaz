@@ -110,7 +110,7 @@ function Index() {
       </section>
 
       {/* 3. SOBRE */}
-      <section id="sobre" className="scroll-mt-24 px-6 py-16 md:px-12 md:py-20">
+      <section id="sobre" className="scroll-mt-24 px-6 py-16 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-10">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-12 md:gap-14">
           <div className="md:col-span-4">
             <SectionLabel>SOBRE MIM</SectionLabel>
@@ -130,7 +130,7 @@ function Index() {
       </section>
 
       {/* 4. COMO TRABALHO */}
-      <section id="metodo" className="scroll-mt-24 bg-ink px-6 py-16 md:px-12 md:py-20">
+      <section id="metodo" className="scroll-mt-24 bg-ink px-6 py-16 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-10">
         <div className="mx-auto max-w-7xl">
           <SectionLabel>COMO TRABALHO</SectionLabel>
           <h2 className="mt-5 font-serif text-4xl md:text-5xl">Ouvir, experimentar, <span className="italic text-bronze">ajustar.</span></h2>
@@ -147,7 +147,7 @@ function Index() {
       </section>
 
       {/* 5. ORGANIZAÇÕES */}
-      <section id="organizacoes" className="scroll-mt-24 px-6 py-14 md:px-12 md:py-16">
+      <section id="organizacoes" className="scroll-mt-24 px-6 py-14 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-10">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-12">
           <div className="md:col-span-4">
             <SectionLabel>ORGANIZAÇÕES</SectionLabel>
@@ -165,7 +165,7 @@ function Index() {
       </section>
 
       {/* 6. EBOOK */}
-      <section id="ebook" className="scroll-mt-24 bg-ink px-6 py-16 md:px-12 md:py-20">
+      <section id="ebook" className="scroll-mt-24 bg-ink px-6 py-16 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-10">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <SectionLabel>EBOOK GRATUITO</SectionLabel>
@@ -189,7 +189,7 @@ function Index() {
       </section>
 
       {/* 7. CONTACTO */}
-      <section id="contacto" className="scroll-mt-24 px-6 py-16 md:px-12 md:py-20">
+      <section id="contacto" className="scroll-mt-24 px-6 py-16 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 md:grid-cols-12 md:items-center md:gap-10">
             <div className="md:col-span-5">
