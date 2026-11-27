@@ -1,0 +1,18 @@
+name: Validar formulário de contacto
+
+on:
+  push:
+    branches: [formulario-real]
+  workflow_dispatch:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+      - name: Compilar projeto
+        run: bun run build
