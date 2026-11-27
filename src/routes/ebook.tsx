@@ -20,10 +20,10 @@ export const Route = createFileRoute("/ebook")({
 
 function EbookPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground" id="top">
+    <div className="min-h-screen bg-background text-foreground" id="ebook-page">
       <SiteNav />
       <main>
-        <section className="px-6 pb-12 pt-20 md:px-12 md:pb-16 md:pt-20">
+        <section className="px-6 pb-12 pt-24 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-12">
           <div className="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-[1fr_0.8fr] md:gap-14">
             <div>
               <p className="mb-3 text-[11px] tracking-[0.25em] text-bronze">EBOOK GRATUITO · JOÃO VAZ</p>
@@ -50,11 +50,11 @@ function EbookPage() {
             </div>
           </div>
         </section>
-        <section className="bg-ink px-6 py-20 md:px-12 md:py-28">
+        <section className="bg-ink px-6 py-16 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-12">
           <div className="mx-auto max-w-7xl">
             <p className="text-[11px] tracking-[0.25em] text-bronze">O QUE VAIS ENCONTRAR</p>
             <h2 className="mt-6 max-w-3xl font-serif text-4xl leading-tight md:text-6xl">Conhecimento que se transforma em <em className="text-bronze">ação.</em></h2>
-            <div className="mt-14 grid gap-8 md:grid-cols-3">
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
               {[
                 ["01","Pensar antes de agir","Partilho perguntas e exercícios para pensares antes de decidir."],
                 ["02","Ouvir e comunicar","Exploro a empatia, a escuta e a comunicação em situações do dia a dia."],
@@ -69,7 +69,7 @@ function EbookPage() {
             </div>
           </div>
         </section>
-        <section className="px-6 py-20 md:px-12 md:py-28">
+        <section className="px-6 py-16 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:px-12 md:py-12">
           <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-7 md:flex-row md:items-center">
             <div>
               <p className="text-[11px] tracking-[0.2em] text-bronze">DA LEITURA À PRÁTICA</p>
