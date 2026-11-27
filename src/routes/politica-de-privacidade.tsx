@@ -24,7 +24,6 @@ function PoliticaPrivacidade() {
             <section>
               <h2 className="font-serif text-2xl text-foreground">Quem trata os teus dados</h2>
               <p className="mt-2">Sou João Vaz, responsável pelo contacto recebido através do site joaovaz.co. Podes contactar-me pelo endereço <a href="mailto:geral@joaovaz.co" className="underline underline-offset-4 hover:text-bronze">geral@joaovaz.co</a>.</p>
-              <p className="mt-2">Informação de identificação adicional do responsável, caso aplicável: [PREENCHER].</p>
             </section>
             <section>
               <h2 className="font-serif text-2xl text-foreground">Que dados recolho e porquê</h2>
@@ -33,11 +32,13 @@ function PoliticaPrivacidade() {
             </section>
             <section>
               <h2 className="font-serif text-2xl text-foreground">Como é processado o envio</h2>
-              <p className="mt-2">Utilizo o serviço Formspree para receber e encaminhar os pedidos enviados pelo formulário. Os dados submetidos passam por esse serviço, de acordo com as suas condições e política de privacidade. Podes consultar a <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-bronze">política de privacidade do Formspree</a>. Os pedidos chegam ao endereço de email configurado no serviço.</p>
+              <p className="mt-2">Utilizo o Formspree para receber os pedidos submetidos através do formulário e encaminhá-los para o meu endereço de email. Os dados ficam também disponíveis na área de submissões da plataforma. Podes consultar a <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-bronze">política de privacidade do Formspree</a>.</p>
             </section>
             <section>
               <h2 className="font-serif text-2xl text-foreground">Conservação e destinatários</h2>
-              <p className="mt-2">Prazo de conservação dos pedidos: [PREENCHER]. Os dados podem ser tratados pelo serviço Formspree e pelos prestadores de email necessários para a resposta. Verificar os locais de tratamento, eventuais transferências internacionais e medidas aplicáveis antes da publicação: [PREENCHER].</p>
+              <p className="mt-2">Conservo os pedidos de contacto durante um período máximo de seis meses após o último contacto, eliminando-os antes se me pedires, salvo se existir uma obrigação legal que imponha a sua conservação. Aplico esta regra aos pedidos guardados na plataforma Formspree e às cópias que recebo por email. Podes solicitar o apagamento em qualquer momento através de geral@joaovaz.co.</p>
+              <p className="mt-2">O Formspree e os serviços de email utilizados para receber e responder às mensagens podem tratar os dados necessários à prestação desses serviços. O Formspree indica que os seus serviços estão alojados nos Estados Unidos da América, pelo que pode existir transferência de dados para fora do Espaço Económico Europeu. Segundo o fornecedor, são utilizadas Cláusulas Contratuais-Tipo como salvaguarda para transferências internacionais. Podes consultar as <a href="https://formspree.io/security/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-bronze">informações de segurança do Formspree</a>.</p>
+              <p className="mt-2">O Formspree declara utilizar encriptação dos dados armazenados e das comunicações. A eliminação das mensagens deve ser efetuada tanto na plataforma como nas cópias recebidas por email; a eliminação na caixa de email, por si só, não elimina a submissão guardada no Formspree.</p>
             </section>
             <section>
               <h2 className="font-serif text-2xl text-foreground">Os teus direitos</h2>
