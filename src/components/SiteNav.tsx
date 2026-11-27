@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#areas", label: "Organizações" },
-  { href: "/empreendedorismo", label: "Empreendedorismo" },
+  { href: "/#mentoria", label: "Mentoria" },
+  { href: "/#sobre", label: "Sobre mim" },
+  { href: "/#metodo", label: "Como trabalho" },
+  { href: "/#organizacoes", label: "Organizações" },
   { href: "/ebook", label: "eBook" },
-  { href: "/#sobre", label: "Sobre" },
   { href: "/#contacto", label: "Contacto" },
 ];
 
