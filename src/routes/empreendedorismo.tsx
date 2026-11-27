@@ -50,7 +50,7 @@ function EmpreendedorismoPage() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-border px-6 py-10 md:px-12"><div className="mx-auto flex max-w-7xl justify-between gap-5 text-sm text-muted-foreground"><a href="/" className="hover:text-bronze">← Voltar à página inicial</a><span>João Vaz · joaovaz.co</span></div></footer>
+      <footer className="border-t border-border px-6 py-10 md:px-12"><div className="mx-auto flex max-w-7xl justify-between gap-5 text-sm text-muted-foreground"><a href="/" className="hover:text-bronze">← Voltar à página inicial</a><span>João Vaz · joaovaz.co · <a href="/politica-de-privacidade" className="underline-offset-4 hover:text-bronze hover:underline">Política de privacidade</a></span></div></footer>
     </div>
   );
 }
