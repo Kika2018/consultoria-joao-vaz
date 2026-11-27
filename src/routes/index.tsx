@@ -299,6 +299,7 @@ function Index() {
       <footer className="border-t border-border px-6 py-8 md:px-12">
         <div className="mx-auto max-w-7xl">
           <p className="font-serif text-sm text-muted-foreground">João Vaz · Todos os direitos reservados</p>
+          <a href="/politica-de-privacidade" className="mt-2 inline-block text-xs text-muted-foreground underline-offset-4 hover:text-bronze hover:underline">Política de privacidade</a>
         </div>
       </footer>
     </div>
