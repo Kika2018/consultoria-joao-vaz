@@ -35,6 +35,8 @@ const principios = [
 
 function Index() {
   const [motivoContacto, setMotivoContacto] = useState("Mentoria online de empreendedorismo");
+  const [estadoContacto, setEstadoContacto] = useState<"parado" | "enviando" | "sucesso" | "erro">("parado");
+  const [erroContacto, setErroContacto] = useState("");
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
       <SiteNav />
@@ -210,25 +212,38 @@ function Index() {
               </div>
             </div>
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                const data = new FormData(e.currentTarget);
-                const nome = String(data.get("nome") ?? "");
-                const email = String(data.get("email") ?? "");
-                const motivo = String(data.get("motivo") ?? "");
-                const empresa = String(data.get("empresa") ?? "");
-                const telefone = String(data.get("telefone") ?? "");
-                const mensagem = String(data.get("mensagem") ?? "");
-                const subject = "Pedido de contacto — " + motivo + " — João Vaz";
-                const body = [
-                  "Nome: " + nome,
-                  "Email: " + email,
-                  "Motivo: " + motivo,
-                  ...(empresa ? ["Empresa ou organização: " + empresa] : []),
-                  "Telefone: " + (telefone || "Não indicado"),
-                  "Mensagem: " + mensagem,
-                ].join("\n");
-                window.location.href = "mailto:geral@joaovaz.co?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                if (estadoContacto === "enviando") return;
+                setEstadoContacto("enviando");
+                setErroContacto("");
+                const formulario = e.currentTarget;
+                const data = new FormData(formulario);
+                try {
+                  const response = await fetch("/api/contacto", {
+                    method: "POST",
+                    headers: { "content-type": "application/json", accept: "application/json" },
+                    body: JSON.stringify({
+                      nome: String(data.get("nome") ?? ""),
+                      email: String(data.get("email") ?? ""),
+                      motivo: String(data.get("motivo") ?? ""),
+                      telefone: String(data.get("telefone") ?? ""),
+                      mensagem: String(data.get("mensagem") ?? ""),
+                      consentimento: data.get("consentimento") === "on",
+                      website: String(data.get("website") ?? ""),
+                    }),
+                  });
+                  const result = await response.json() as { ok?: boolean; error?: string };
+                  if (!response.ok || !result.ok) {
+                    throw new Error(result.error || "Não foi possível enviar o pedido. Tenta novamente.");
+                  }
+                  setEstadoContacto("sucesso");
+                  formulario.reset();
+                  setMotivoContacto("Mentoria online de empreendedorismo");
+                } catch (error) {
+                  setErroContacto(error instanceof Error ? error.message : "Não foi possível enviar o pedido. Tenta novamente.");
+                  setEstadoContacto("erro");
+                }
               }}
               className="space-y-7 md:col-span-6 md:col-start-7 md:space-y-4"
             >
@@ -248,18 +263,34 @@ function Index() {
                   <option value="Outro assunto">Outro assunto</option>
                 </select>
               </label>
-              {motivoContacto === "Formação para Organizações" && (
-                <Field name="empresa" label="EMPRESA OU ORGANIZAÇÃO" placeholder="Nome da empresa ou organização" required />
-              )}
               <Field name="telefone" label="TELEFONE (OPCIONAL)" type="tel" placeholder="+351, se preferires contacto telefónico" />
               <FieldArea name="mensagem" label="MENSAGEM" placeholder="Conta-me brevemente o que procuras…" required />
+              <label className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
+                <input type="checkbox" name="consentimento" required className="mt-1.5 h-4 w-4 shrink-0 accent-[var(--bronze)]" />
+                <span>
+                  Aceito que os meus dados sejam usados para responder a este pedido.
+                  {" "}<a href="/politica-de-privacidade" className="underline underline-offset-4 transition-colors hover:text-bronze">Política de privacidade</a>.
+                </span>
+              </label>
+              <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                <label>Deixa este campo vazio<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
+              </div>
               <div className="space-y-3 md:space-y-2">
-                <button type="submit" className="group inline-flex min-h-12 items-center gap-3 border border-bronze px-7 py-3 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-background">
-                  PREPARAR PEDIDO DE CONTACTO <span aria-hidden="true">→</span>
+                <button type="submit" disabled={estadoContacto === "enviando"}
+                  className="group inline-flex min-h-12 items-center gap-3 border border-bronze px-7 py-3 text-[11px] tracking-editorial text-foreground transition-colors hover:bg-bronze hover:text-background disabled:cursor-wait disabled:opacity-60">
+                  {estadoContacto === "enviando" ? "A ENVIAR…" : "ENVIAR PEDIDO DE CONTACTO"}
+                  <span aria-hidden="true">→</span>
                 </button>
-                <p className="max-w-lg text-xs leading-5 text-muted-foreground">
-                  O botão abre a tua aplicação de email com a mensagem preparada. Para me contactares, confirma o envio nessa aplicação. Os dados não ficam guardados neste site.
-                </p>
+                {estadoContacto === "sucesso" && (
+                  <p role="status" aria-live="polite" className="text-sm leading-6 text-foreground">
+                    Recebi o teu pedido. Respondo-te por email em breve.
+                  </p>
+                )}
+                {estadoContacto === "erro" && (
+                  <p role="alert" className="text-sm leading-6 text-foreground">
+                    {erroContacto} Se o problema continuar, escreve-me para <a href="mailto:geral@joaovaz.co" className="underline underline-offset-4">geral@joaovaz.co</a>.
+                  </p>
+                )}
               </div>
             </form>
           </div>
@@ -268,6 +299,7 @@ function Index() {
       <footer className="border-t border-border px-6 py-8 md:px-12">
         <div className="mx-auto max-w-7xl">
           <p className="font-serif text-sm text-muted-foreground">João Vaz · Todos os direitos reservados</p>
+          <a href="/politica-de-privacidade" className="mt-2 inline-block text-xs text-muted-foreground underline-offset-4 hover:text-bronze hover:underline">Política de privacidade</a>
         </div>
       </footer>
     </div>
