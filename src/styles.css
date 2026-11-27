@@ -120,3 +120,65 @@
     scroll-snap-align: start;
   }
 }
+
+/* Mobile: compact editorial layout, consistent browser text sizing. */
+@media (max-width: 767px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  #top > header > nav:first-child,
+  #ebook-page > header > nav:first-child {
+    padding: 0.875rem 1.125rem;
+  }
+  #top > section, #top > main > section,
+  #ebook-page > main > section {
+    padding-inline: 1.125rem;
+    padding-block: 2.5rem;
+  }
+  #top > section:first-of-type, #top > main > section:first-of-type,
+  #ebook-page > main > section:first-of-type {
+    padding-top: 5.25rem;
+    padding-bottom: 2rem;
+  }
+  #top h1, #ebook-page h1 {
+    font-size: clamp(2.15rem, 8.5vw, 3rem);
+    line-height: 1.08;
+  }
+  #top h2, #ebook-page h2 {
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.15;
+  }
+  #top section p.text-base, #top section p.text-lg,
+  #ebook-page section p.text-base {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  #top section p.text-sm, #ebook-page section p.text-sm {
+    line-height: 1.6;
+  }
+  #top > section:first-of-type .mt-6,
+  #top > main > section:first-of-type .mt-8,
+  #ebook-page > main > section:first-of-type .mt-5 {
+    margin-top: 1rem;
+  }
+  #top > section:first-of-type .mt-8,
+  #top > main > section:first-of-type .mt-9 {
+    margin-top: 1.25rem;
+  }
+  #top section a.inline-flex, #ebook-page section a.inline-flex,
+  #top section button.inline-flex {
+    max-width: 100%;
+    min-height: 44px;
+    padding-inline: 0.875rem;
+    padding-block: 0.75rem;
+    font-size: clamp(0.625rem, 2.8vw, 0.75rem);
+    letter-spacing: 0.025em;
+    line-height: 1.4;
+    text-align: center;
+    justify-content: center;
+  }
+  #top footer > div, #ebook-page footer > div {
+    flex-wrap: wrap;
+  }
+}
