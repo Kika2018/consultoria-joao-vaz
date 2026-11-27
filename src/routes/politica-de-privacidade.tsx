@@ -55,7 +55,7 @@ function PoliticaPrivacidade() {
         </div>
       </main>
       <footer className="border-t border-border px-6 py-8 md:px-12">
-        <div className="mx-auto max-w-7xl text-sm text-muted-foreground">João Vaz · joaovaz.co</div>
+        <div className="mx-auto max-w-7xl text-sm text-muted-foreground">João Vaz · joaovaz.co · <a href="/politica-de-privacidade" className="underline-offset-4 hover:text-bronze hover:underline">Política de privacidade</a></div>
       </footer>
     </div>
   );
