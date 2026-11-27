@@ -1,0 +1,39 @@
+name: Diagnosticar site público
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/diagnostico-site.yml
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar HTML e CSS no domínio e Worker
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import urllib.request, re
+          urls=["https://joaovaz.co/","https://www.joaovaz.co/","https://joaovaz-co.jpgvaz.workers.dev/","https://joaovaz-home-preview.jpgvaz.workers.dev/"]
+          for url in urls:
+              print("\\nURL:", url, flush=True)
+              try:
+                  request=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (site-diagnostic)"})
+                  with urllib.request.urlopen(request,timeout=15) as resp:
+                      html=resp.read().decode("utf-8","replace")
+                      print("HTTP",resp.status,"FINAL URL",resp.url,"CACHE",resp.headers.get("cf-cache-status"),"AGE",resp.headers.get("age"),"CONTENT-TYPE",resp.headers.get("content-type"))
+                      print("HTML_BYTES",len(html),"NEW_HERO",("Tens uma ideia?" in html),"OLD_HERO",("Pessoas que" in html),"HAS_STYLESHEET",("stylesheet" in html))
+                      css_urls=re.findall(r'<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"',html)
+                      css_urls += re.findall(r'<link[^>]+href="([^"]+)"[^>]+rel="stylesheet"',html)
+                      print("CSS_LINKS",css_urls[:8])
+                      for css in dict.fromkeys(css_urls):
+                          if css.startswith("http") and "fonts.googleapis" in css:continue
+                          full=urllib.request.urljoin(url,css)
+                          try:
+                              with urllib.request.urlopen(urllib.request.Request(full,headers={"User-Agent":"Mozilla/5.0"}),timeout=15) as r:
+                                  data=r.read()
+                                  print("CSS",full,"HTTP",r.status,"BYTES",len(data),"TYPE",r.headers.get("content-type"),"CACHE",r.headers.get("cf-cache-status"))
+                          except Exception as e: print("CSS_ERROR",full,type(e).__name__,str(e))
+              except Exception as e: print("PAGE_ERROR",type(e).__name__,str(e))
+          PY
